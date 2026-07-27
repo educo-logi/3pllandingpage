@@ -436,15 +436,12 @@
     .problem-card,
     .benefit-card,
     .target-card {
-      padding: 26px;
-      min-height: 210px;
-    }
-
-    .benefit-card {
       padding: 0;
+      min-height: 210px;
       overflow: hidden;
     }
 
+    .card-title,
     .benefit-title {
       min-height: 84px;
       display: flex;
@@ -452,9 +449,21 @@
       gap: 14px;
       padding: 16px 20px;
       border-bottom: 1px solid #e8e5f0;
+    }
+
+    .problem-title {
+      background: linear-gradient(135deg, #f2edff 0%, #fff3ef 100%);
+    }
+
+    .benefit-title {
       background: linear-gradient(135deg, #f2edff 0%, #edf8f2 100%);
     }
 
+    .target-title {
+      background: linear-gradient(135deg, #eef4ff 0%, #f5efff 100%);
+    }
+
+    .card-title .icon,
     .benefit-title .icon {
       flex: 0 0 48px;
       width: 48px;
@@ -465,16 +474,20 @@
       box-shadow: 0 6px 16px rgba(43, 35, 95, 0.08);
     }
 
-    .benefit-card .benefit-title h3 {
+    .problem-card .card-title h3,
+    .benefit-card .benefit-title h3,
+    .target-card .card-title h3 {
       margin: 0;
     }
 
+    .problem-card > p,
+    .target-card > p,
     .benefit-card > p {
       padding: 20px 22px 24px;
     }
 
     .problem-card {
-      text-align: center;
+      text-align: left;
     }
 
     .icon {
@@ -510,7 +523,7 @@
     }
 
     .solution {
-      margin-top: 18px;
+      margin: 0 22px 24px;
       padding: 15px 16px;
       border-radius: 18px;
       background: #f4fbf1;
@@ -599,20 +612,31 @@
 
     .flow-card {
       position: relative;
-      padding: 24px 18px;
+      padding: 0;
+      overflow: hidden;
       border: 1px solid var(--line);
       border-radius: 22px;
       background: #fff;
-      text-align: center;
+      text-align: left;
       box-shadow: 0 10px 24px rgba(22, 20, 45, 0.05);
     }
 
+    .flow-title {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 16px;
+      border-bottom: 1px solid #e4e9f1;
+      background: linear-gradient(135deg, #edf4ff 0%, #eef9f1 100%);
+    }
+
     .flow-card b {
-      display: inline-grid;
+      flex: 0 0 40px;
+      display: grid;
       place-items: center;
       width: 40px;
       height: 40px;
-      margin-bottom: 14px;
       border-radius: 50%;
       background: var(--purple);
       color: #fff;
@@ -621,13 +645,14 @@
     }
 
     .flow-card h3 {
-      margin: 0 0 8px;
+      margin: 0;
       font-size: 18px;
       font-weight: 950;
     }
 
     .flow-card p {
       margin: 0;
+      padding: 18px 20px 22px;
       color: var(--sub);
       font-size: 14px;
       line-height: 1.6;
@@ -642,15 +667,43 @@
     }
 
     .price-main {
-      padding: 34px;
+      padding: 0;
+      overflow: hidden;
       border-radius: 30px;
       background: #fff;
       border: 1px solid var(--line);
       box-shadow: var(--shadow);
     }
 
+    .price-title,
+    .location-title {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 22px 24px;
+      border-bottom: 1px solid #e8e5f0;
+      background: linear-gradient(135deg, #f2edff 0%, #eef8f1 100%);
+    }
+
+    .price-title .icon,
+    .location-title .icon {
+      flex: 0 0 52px;
+      margin: 0;
+      background: rgba(255, 255, 255, 0.82);
+      box-shadow: 0 6px 16px rgba(43, 35, 95, 0.08);
+    }
+
+    .card-title-copy {
+      min-width: 0;
+    }
+
+    .price-title .section-kicker,
+    .location-title .section-kicker {
+      margin-bottom: 6px;
+    }
+
     .price-main h3 {
-      margin: 0 0 14px;
+      margin: 0;
       font-size: clamp(26px, 3.4vw, 38px);
       line-height: 1.22;
       font-weight: 950;
@@ -658,6 +711,7 @@
 
     .price-main p {
       margin: 0;
+      padding: 24px 28px 30px;
       color: #5f6472;
       font-size: 17px;
       line-height: 1.78;
@@ -676,7 +730,7 @@
       min-height: 70px;
       padding: 16px 18px;
       border-radius: 20px;
-      background: #fff;
+      background: linear-gradient(135deg, #fff 0%, #f3f8ff 100%);
       border: 1px solid var(--line);
       box-shadow: 0 10px 24px rgba(22, 20, 45, 0.05);
       font-weight: 900;
@@ -701,27 +755,32 @@
     }
 
     .location-card {
-      padding: 30px;
+      padding: 0;
+      overflow: hidden;
     }
 
     .location-card h3 {
-      margin: 0 0 12px;
+      margin: 0;
       font-size: 28px;
       font-weight: 950;
     }
 
     .location-card p {
       margin: 0;
+      padding: 24px 28px 0;
       color: #5f6472;
       font-size: 16px;
       line-height: 1.75;
       font-weight: 750;
     }
 
+    .location-card .hero-actions {
+      padding: 22px 28px 28px;
+    }
+
     .map-card {
       min-height: 320px;
-      display: grid;
-      place-items: center;
+      overflow: hidden;
       border-radius: 28px;
       background:
         linear-gradient(rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.88)),
@@ -729,21 +788,45 @@
         #eef2fb;
       border: 1px solid var(--line);
       box-shadow: 0 12px 30px rgba(22, 20, 45, 0.06);
-      text-align: center;
-      padding: 26px;
+      text-align: left;
+    }
+
+    .map-title {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 22px 24px;
+      border-bottom: 1px solid #e4e9f1;
+      background: linear-gradient(135deg, #edf4ff 0%, #eef9f1 100%);
     }
 
     .pin {
-      width: 76px;
-      height: 76px;
+      flex: 0 0 52px;
+      width: 52px;
+      height: 52px;
       display: grid;
       place-items: center;
-      margin: 0 auto 14px;
-      border-radius: 26px;
+      margin: 0;
+      border-radius: 16px;
       background: linear-gradient(135deg, var(--purple-dark), var(--purple));
       color: #fff;
-      font-size: 34px;
+      font-size: 24px;
       box-shadow: 0 16px 30px rgba(91, 58, 162, 0.25);
+    }
+
+    .map-title h3 {
+      margin: 0;
+      font-size: 28px;
+      font-weight: 950;
+    }
+
+    .map-card > p {
+      margin: 0;
+      padding: 24px 28px;
+      color: #5f6472;
+      font-size: 16px;
+      line-height: 1.75;
+      font-weight: 750;
     }
 
     .faq {
@@ -765,7 +848,7 @@
       gap: 16px;
       padding: 20px 22px;
       border: 0;
-      background: #fff;
+      background: linear-gradient(135deg, #f2edff 0%, #edf8f2 100%);
       color: var(--ink);
       text-align: left;
       cursor: pointer;
@@ -982,27 +1065,40 @@
       .benefit-card,
       .target-card {
         min-height: auto;
-        padding: 22px;
-      }
-
-      .benefit-card {
         padding: 0;
       }
 
+      .card-title,
       .benefit-title {
         min-height: 76px;
         gap: 12px;
         padding: 14px 16px;
       }
 
+      .card-title .icon,
       .benefit-title .icon {
         flex-basis: 44px;
         width: 44px;
         height: 44px;
       }
 
+      .problem-card > p,
+      .target-card > p,
       .benefit-card > p {
         padding: 18px 18px 22px;
+      }
+
+      .solution {
+        margin: 0 18px 22px;
+      }
+
+      .flow-title {
+        min-height: 68px;
+        padding: 12px 16px;
+      }
+
+      .flow-card p {
+        padding: 17px 18px 20px;
       }
 
       .statement {
@@ -1011,7 +1107,57 @@
 
       .price-main,
       .location-card {
-        padding: 24px;
+        padding: 0;
+      }
+
+      .price-title,
+      .location-title {
+        align-items: center;
+        gap: 12px;
+        padding: 18px;
+      }
+
+      .price-title .icon,
+      .location-title .icon {
+        flex-basis: 44px;
+        width: 44px;
+        height: 44px;
+      }
+
+      .price-main p {
+        padding: 20px 20px 24px;
+      }
+
+      .location-card p {
+        padding: 20px 20px 0;
+      }
+
+      .location-card .hero-actions {
+        padding: 20px;
+      }
+
+      .map-card {
+        min-height: auto;
+      }
+
+      .map-title {
+        gap: 12px;
+        padding: 18px;
+      }
+
+      .pin {
+        flex-basis: 44px;
+        width: 44px;
+        height: 44px;
+        font-size: 21px;
+      }
+
+      .map-title h3 {
+        font-size: 23px;
+      }
+
+      .map-card > p {
+        padding: 20px;
       }
 
       .floating {
@@ -1084,8 +1230,10 @@
         </div>
         <div class="problem-grid">
           <article class="problem-card">
-            <div class="icon">01</div>
-            <h3>포장·출고에 하루가 끝남</h3>
+            <div class="card-title problem-title">
+              <div class="icon">01</div>
+              <h3>포장·출고에 하루가 끝남</h3>
+            </div>
             <p>주문은 늘었지만 대표님과 직원이 박스 포장에 묶여 핵심업무 시간이 줄어듭니다.</p>
             <div class="solution">
               <b>해결</b>
@@ -1093,8 +1241,10 @@
             </div>
           </article>
           <article class="problem-card">
-            <div class="icon">02</div>
-            <h3>채널별 출고 방식이 다름</h3>
+            <div class="card-title problem-title">
+              <div class="icon">02</div>
+              <h3>채널별 출고 방식이 다름</h3>
+            </div>
             <p>자사몰, 스마트스토어, 쿠팡 주문을 따로 처리하다 보면 누락과 지연이 생기기 쉽습니다.</p>
             <div class="solution">
               <b>해결</b>
@@ -1102,8 +1252,10 @@
             </div>
           </article>
           <article class="problem-card">
-            <div class="icon">03</div>
-            <h3>소량이라 단가가 높음</h3>
+            <div class="card-title problem-title">
+              <div class="icon">03</div>
+              <h3>소량이라 단가가 높음</h3>
+            </div>
             <p>출고량이 적으면 택배 계약과 포장 자재 단가가 불리해져 고정비 부담이 커집니다.</p>
             <div class="solution">
               <b>해결</b>
@@ -1189,14 +1341,14 @@
           <p>입고부터 출고 후 반품 관리까지, 브랜드 운영에 필요한 반복 물류 업무를 바인그룹 물류센터가 처리합니다.</p>
         </div>
         <div class="flow">
-          <div class="flow-card"><b>1</b><h3>상품 입고</h3><p>센터 입고 후 상품 상태와 수량을 확인합니다.</p></div>
-          <div class="flow-card"><b>2</b><h3>검수·보관</h3><p>상품 특성과 출고 빈도에 맞춰 보관합니다.</p></div>
-          <div class="flow-card"><b>3</b><h3>재고관리</h3><p>재고 현황과 출고 상태를 관리합니다.</p></div>
-          <div class="flow-card"><b>4</b><h3>주문 출고</h3><p>쇼핑몰 주문에 맞춰 포장 및 출고합니다.</p></div>
-          <div class="flow-card"><b>5</b><h3>배송 처리</h3><p>택배 발송과 송장 처리를 지원합니다.</p></div>
-          <div class="flow-card"><b>6</b><h3>쿠팡 밀크런</h3><p>쿠팡 판매자의 밀크런 물류 흐름을 상담합니다.</p></div>
-          <div class="flow-card"><b>7</b><h3>로켓그로스</h3><p>로켓그로스 입고 관련 준비를 도와드립니다.</p></div>
-          <div class="flow-card"><b>8</b><h3>반품·교환</h3><p>반품 상품 확인과 재고 반영을 관리합니다.</p></div>
+          <div class="flow-card"><div class="flow-title"><b>1</b><h3>상품 입고</h3></div><p>센터 입고 후 상품 상태와 수량을 확인합니다.</p></div>
+          <div class="flow-card"><div class="flow-title"><b>2</b><h3>검수·보관</h3></div><p>상품 특성과 출고 빈도에 맞춰 보관합니다.</p></div>
+          <div class="flow-card"><div class="flow-title"><b>3</b><h3>재고관리</h3></div><p>재고 현황과 출고 상태를 관리합니다.</p></div>
+          <div class="flow-card"><div class="flow-title"><b>4</b><h3>주문 출고</h3></div><p>쇼핑몰 주문에 맞춰 포장 및 출고합니다.</p></div>
+          <div class="flow-card"><div class="flow-title"><b>5</b><h3>배송 처리</h3></div><p>택배 발송과 송장 처리를 지원합니다.</p></div>
+          <div class="flow-card"><div class="flow-title"><b>6</b><h3>쿠팡 밀크런</h3></div><p>쿠팡 판매자의 밀크런 물류 흐름을 상담합니다.</p></div>
+          <div class="flow-card"><div class="flow-title"><b>7</b><h3>로켓그로스</h3></div><p>로켓그로스 입고 관련 준비를 도와드립니다.</p></div>
+          <div class="flow-card"><div class="flow-title"><b>8</b><h3>반품·교환</h3></div><p>반품 상품 확인과 재고 반영을 관리합니다.</p></div>
         </div>
       </div>
     </section>
@@ -1205,8 +1357,13 @@
       <div class="wrap">
         <div class="price-box">
           <div class="price-main">
-            <span class="section-kicker">비용 절감 구조</span>
-            <h3>소량 업체도 대량 출고 단가를 활용할 수 있습니다.</h3>
+            <div class="price-title">
+              <div class="icon">₩</div>
+              <div class="card-title-copy">
+                <span class="section-kicker">비용 절감 구조</span>
+                <h3>소량 업체도 대량 출고 단가를 활용할 수 있습니다.</h3>
+              </div>
+            </div>
             <p>개별 업체가 직접 택배 계약을 하면 출고량이 적어 단가가 높아질 수 있습니다. 바인그룹 물류센터는 여러 업체의 물량을 함께 운영하기 때문에 소규모 브랜드도 더 합리적인 물류 환경을 이용할 수 있습니다.</p>
           </div>
           <div class="price-list">
@@ -1227,12 +1384,12 @@
           <p>자사몰을 중심으로 스마트스토어, 쿠팡까지 함께 운영하는 브랜드라면 물류를 외주화했을 때 효율이 커집니다.</p>
         </div>
         <div class="target-grid">
-          <article class="target-card"><div class="icon">B</div><h3>자사몰 브랜드</h3><p>브랜드 운영과 마케팅에 집중하고 싶은 업체</p></article>
-          <article class="target-card"><div class="icon">S</div><h3>스마트스토어 판매자</h3><p>주문 증가로 직접 출고가 부담되는 판매자</p></article>
-          <article class="target-card"><div class="icon">C</div><h3>쿠팡 판매자</h3><p>밀크런, 로켓그로스 등 쿠팡 물류 대응이 필요한 업체</p></article>
-          <article class="target-card"><div class="icon">多</div><h3>다채널 운영사</h3><p>여러 판매 채널 주문을 한 곳에서 관리하고 싶은 업체</p></article>
-          <article class="target-card"><div class="icon">小</div><h3>소량 출고 업체</h3><p>물량은 적지만 대량 단가의 이점을 원하는 업체</p></article>
-          <article class="target-card"><div class="icon">大</div><h3>대형 상품 업체</h3><p>부피가 큰 상품의 입고와 보관 상담이 필요한 업체</p></article>
+          <article class="target-card"><div class="card-title target-title"><div class="icon">B</div><h3>자사몰 브랜드</h3></div><p>브랜드 운영과 마케팅에 집중하고 싶은 업체</p></article>
+          <article class="target-card"><div class="card-title target-title"><div class="icon">S</div><h3>스마트스토어 판매자</h3></div><p>주문 증가로 직접 출고가 부담되는 판매자</p></article>
+          <article class="target-card"><div class="card-title target-title"><div class="icon">C</div><h3>쿠팡 판매자</h3></div><p>밀크런, 로켓그로스 등 쿠팡 물류 대응이 필요한 업체</p></article>
+          <article class="target-card"><div class="card-title target-title"><div class="icon">多</div><h3>다채널 운영사</h3></div><p>여러 판매 채널 주문을 한 곳에서 관리하고 싶은 업체</p></article>
+          <article class="target-card"><div class="card-title target-title"><div class="icon">小</div><h3>소량 출고 업체</h3></div><p>물량은 적지만 대량 단가의 이점을 원하는 업체</p></article>
+          <article class="target-card"><div class="card-title target-title"><div class="icon">大</div><h3>대형 상품 업체</h3></div><p>부피가 큰 상품의 입고와 보관 상담이 필요한 업체</p></article>
         </div>
       </div>
     </section>
@@ -1240,8 +1397,13 @@
     <section class="section soft fade">
       <div class="wrap location-grid">
         <div class="location-card">
-          <span class="section-kicker">전국 물류 대응</span>
-          <h3>판매 지역과 관계없이 물류를 맡기세요</h3>
+          <div class="location-title">
+            <div class="icon">全</div>
+            <div class="card-title-copy">
+              <span class="section-kicker">전국 물류 대응</span>
+              <h3>판매 지역과 관계없이 물류를 맡기세요</h3>
+            </div>
+          </div>
           <p>자사몰, 스마트스토어, 쿠팡 판매자의 상품 입고부터 재고관리, 포장, 전국 배송 출고까지 한 번에 지원합니다.</p>
           <div class="hero-actions">
             <a class="btn primary" href="./3pl-sinchung.html?from=3PL1">물류 상담 신청</a>
@@ -1249,11 +1411,11 @@
           </div>
         </div>
         <div class="map-card">
-          <div>
+          <div class="map-title">
             <div class="pin">全</div>
             <h3>전국 배송 출고</h3>
-            <p>자사몰 · 스마트스토어 · 쿠팡 채널 통합 대응</p>
           </div>
+          <p>자사몰 · 스마트스토어 · 쿠팡 채널 통합 대응</p>
         </div>
       </div>
     </section>
@@ -1266,10 +1428,10 @@
           <p>현재 물류 방식과 월 출고량을 확인한 뒤, 적합한 운영 방식과 견적을 제안합니다.</p>
         </div>
         <div class="flow">
-          <div class="flow-card"><b>1</b><h3>상담 신청</h3><p>업체 정보와 현재 물류 상황을 남겨주세요.</p></div>
-          <div class="flow-card"><b>2</b><h3>현황 확인</h3><p>판매 채널, 상품군, 출고량, 보관 조건을 확인합니다.</p></div>
-          <div class="flow-card"><b>3</b><h3>견적 제안</h3><p>운영 방식과 예상 절감 포인트를 안내합니다.</p></div>
-          <div class="flow-card"><b>4</b><h3>운영 시작</h3><p>상품 입고 후 재고관리와 출고 대행을 시작합니다.</p></div>
+          <div class="flow-card"><div class="flow-title"><b>1</b><h3>상담 신청</h3></div><p>업체 정보와 현재 물류 상황을 남겨주세요.</p></div>
+          <div class="flow-card"><div class="flow-title"><b>2</b><h3>현황 확인</h3></div><p>판매 채널, 상품군, 출고량, 보관 조건을 확인합니다.</p></div>
+          <div class="flow-card"><div class="flow-title"><b>3</b><h3>견적 제안</h3></div><p>운영 방식과 예상 절감 포인트를 안내합니다.</p></div>
+          <div class="flow-card"><div class="flow-title"><b>4</b><h3>운영 시작</h3></div><p>상품 입고 후 재고관리와 출고 대행을 시작합니다.</p></div>
         </div>
       </div>
     </section>
