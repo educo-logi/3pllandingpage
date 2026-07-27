@@ -1,9 +1,10 @@
 import { writeFile } from "node:fs/promises";
+import { shoppingmallArticles } from "./guide-data-shoppingmall.mjs";
 
 const baseUrl = "https://lds1202.github.io/landingpage_001";
 const today = "2026-07-27";
 
-const articles = [
+const coreArticles = [
   {
     slug: "guide-3pl-basics.html",
     category: "3PL 시작하기",
@@ -301,6 +302,8 @@ const articles = [
     ],
   },
 ];
+
+const articles = [...coreArticles, ...shoppingmallArticles];
 
 const sharedCss = String.raw`
   :root {
@@ -896,7 +899,7 @@ function scripts() {
 }
 
 function guideIcon(index) {
-  return ["01", "02", "03", "04", "05", "06"][index] || "•";
+  return ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10"][index] || "•";
 }
 
 function guideCard(article, index) {
@@ -927,7 +930,7 @@ function renderHub() {
   const canonical = `${baseUrl}/logistics-guide.html`;
   const title = "3PL 물류대행 가이드 | 바인그룹 물류센터";
   const description =
-    "3PL 물류대행의 뜻, 자체출고와의 차이, 소량 물류대행과 물류비 절감 방법을 실무 관점에서 정리한 바인그룹 물류 가이드입니다.";
+    "3PL 물류대행의 뜻, 자체출고 비교, 쇼핑몰 물류대행, 다채널 주문, 브랜드 포장과 물류비 절감 방법을 실무 관점에서 정리한 가이드입니다.";
   const schema = {
     "@context": "https://schema.org",
     "@graph": [
@@ -958,6 +961,7 @@ function renderHub() {
       },
     ],
   };
+  const shoppingmallGuides = articles.filter((article) => article.cluster === "shoppingmall");
   return `<!DOCTYPE html>
 <html lang="ko">
 <head>${head({ title, description, canonical, schema })}</head>
@@ -969,7 +973,7 @@ ${header("guide")}
       <div>
         <span class="eyebrow">바인그룹 물류 가이드</span>
         <h1>물류를 맡기기 전,<br /><strong>판단 기준부터 확인하세요.</strong></h1>
-        <p>3PL의 기본 개념부터 자체출고 비교, 소량 물류와 비용 절감 방법까지 브랜드 운영자가 실제로 확인해야 할 내용을 정리했습니다.</p>
+        <p>3PL의 기본 개념부터 자체출고 비교, 쇼핑몰 다채널 출고, 브랜드 포장과 비용 절감 방법까지 운영자가 실제로 확인해야 할 내용을 정리했습니다.</p>
         <div class="hero-actions">
           <a class="btn primary" href="#featured">핵심 가이드 보기</a>
           <a class="btn secondary" href="./3pl-sinchung.html?from=guide">현재 물류 상담하기</a>
@@ -992,18 +996,32 @@ ${header("guide")}
         <a href="#featured">3PL 시작하기</a>
         <a href="#featured">운영 방식 비교</a>
         <a href="#featured">물류비 절감</a>
+        <a href="#shoppingmall">쇼핑몰 물류</a>
         <a href="#upcoming">소량 물류</a>
         <a href="#upcoming">쿠팡 물류</a>
       </nav>
-      <div class="guide-grid">${articles.map(guideCard).join("")}</div>
+      <div class="guide-grid">${coreArticles.map(guideCard).join("")}</div>
     </div>
   </section>
-  <section class="section soft" id="upcoming">
+  <section class="section soft" id="shoppingmall">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">쇼핑몰 물류 가이드</span>
+        <h2>자사몰·스마트스토어 운영을 더 가볍게</h2>
+        <p>물류대행 전환 시점부터 다채널 주문, 브랜드 포장과 재고 정확도까지 온라인 브랜드가 자주 부딪히는 문제를 실무 기준으로 정리했습니다.</p>
+      </div>
+      <div class="hero-actions" style="margin-bottom:28px">
+        <a class="btn primary" href="./shoppingmall-logistics.html">쇼핑몰 물류대행 서비스 보기</a>
+      </div>
+      <div class="guide-grid">${shoppingmallGuides.map((article, index) => guideCard(article, index + coreArticles.length)).join("")}</div>
+    </div>
+  </section>
+  <section class="section" id="upcoming">
     <div class="wrap">
       <div class="section-head">
         <span class="eyebrow">다음 가이드</span>
         <h2>판매 채널과 상품 특성별로 확장합니다</h2>
-        <p>소량 출고, 쇼핑몰 주문, 쿠팡과 반품 관리처럼 실제 상담에서 자주 나오는 주제를 순서대로 추가합니다.</p>
+        <p>소량 출고, 쿠팡 물류와 반품 관리처럼 실제 상담에서 자주 나오는 주제를 순서대로 추가합니다.</p>
       </div>
       <div class="guide-grid">
         ${comingCard("04", "소량 물류", "소량 물류대행 업체 선택 기준", "출고량이 적을 때 확인해야 할 비용, 보관, 최소 조건을 정리합니다.")}
@@ -1074,7 +1092,11 @@ function renderArticle(article, index) {
       { "@type": "FAQPage", mainEntity: faqSchema(article) },
     ],
   };
-  const otherArticles = articles.filter((item) => item.slug !== article.slug);
+  const cluster = article.cluster || "core";
+  const otherArticles = articles
+    .filter((item) => item.slug !== article.slug)
+    .sort((a, b) => Number((b.cluster || "core") === cluster) - Number((a.cluster || "core") === cluster))
+    .slice(0, 3);
   const source = article.slug.replace(".html", "");
   return `<!DOCTYPE html>
 <html lang="ko">
@@ -1140,7 +1162,13 @@ ${header("guide", source)}
             <span>가이드 읽기 →</span>
           </a>`
             )
-            .join("")}
+            .join("")}${cluster === "shoppingmall"
+            ? `
+          <a class="related-card" href="./shoppingmall-logistics.html">
+            <b>쇼핑몰 물류대행 서비스</b>
+            <span>서비스 확인하기 →</span>
+          </a>`
+            : ""}
           <a class="related-card" href="./logistics-guide.html">
             <b>물류 가이드 전체 목록</b>
             <span>목록으로 이동 →</span>
