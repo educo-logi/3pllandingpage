@@ -1,5 +1,6 @@
 import { writeFile } from "node:fs/promises";
 import { shoppingmallArticles } from "./guide-data-shoppingmall.mjs";
+import { coupangArticles } from "./guide-data-coupang.mjs";
 
 const baseUrl = "https://lds1202.github.io/landingpage_001";
 const today = "2026-07-27";
@@ -303,7 +304,7 @@ const coreArticles = [
   },
 ];
 
-const articles = [...coreArticles, ...shoppingmallArticles];
+const articles = [...coreArticles, ...shoppingmallArticles, ...coupangArticles];
 
 const sharedCss = String.raw`
   :root {
@@ -580,6 +581,7 @@ const sharedCss = String.raw`
   .content-section h2 { margin: 0 0 18px; font-size: 31px; line-height: 1.3; font-weight: 950; }
   .content-section p { margin: 0 0 18px; color: #464b59; font-size: 17px; line-height: 1.86; font-weight: 650; }
   .content-section strong { color: var(--ink); }
+  .content-section a { color: var(--purple); text-decoration: underline; text-underline-offset: 3px; }
   .note {
     display: flex;
     gap: 14px;
@@ -899,7 +901,7 @@ function scripts() {
 }
 
 function guideIcon(index) {
-  return ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10"][index] || "•";
+  return ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"][index] || "•";
 }
 
 function guideCard(article, index) {
@@ -930,7 +932,7 @@ function renderHub() {
   const canonical = `${baseUrl}/logistics-guide.html`;
   const title = "3PL 물류대행 가이드 | 바인그룹 물류센터";
   const description =
-    "3PL 물류대행의 뜻, 자체출고 비교, 쇼핑몰 물류대행, 다채널 주문, 브랜드 포장과 물류비 절감 방법을 실무 관점에서 정리한 가이드입니다.";
+    "3PL 물류대행, 쇼핑몰 출고, 쿠팡 밀크런, 로켓그로스 입고, 다채널 재고와 물류비 절감 방법을 실무 관점에서 정리한 가이드입니다.";
   const schema = {
     "@context": "https://schema.org",
     "@graph": [
@@ -962,6 +964,7 @@ function renderHub() {
     ],
   };
   const shoppingmallGuides = articles.filter((article) => article.cluster === "shoppingmall");
+  const coupangGuides = articles.filter((article) => article.cluster === "coupang");
   return `<!DOCTYPE html>
 <html lang="ko">
 <head>${head({ title, description, canonical, schema })}</head>
@@ -973,7 +976,7 @@ ${header("guide")}
       <div>
         <span class="eyebrow">바인그룹 물류 가이드</span>
         <h1>물류를 맡기기 전,<br /><strong>판단 기준부터 확인하세요.</strong></h1>
-        <p>3PL의 기본 개념부터 자체출고 비교, 쇼핑몰 다채널 출고, 브랜드 포장과 비용 절감 방법까지 운영자가 실제로 확인해야 할 내용을 정리했습니다.</p>
+        <p>3PL의 기본 개념부터 쇼핑몰 다채널 출고, 쿠팡 밀크런과 로켓그로스 입고, 비용 절감 방법까지 운영자가 실제로 확인해야 할 내용을 정리했습니다.</p>
         <div class="hero-actions">
           <a class="btn primary" href="#featured">핵심 가이드 보기</a>
           <a class="btn secondary" href="./3pl-sinchung.html?from=guide">현재 물류 상담하기</a>
@@ -997,8 +1000,8 @@ ${header("guide")}
         <a href="#featured">운영 방식 비교</a>
         <a href="#featured">물류비 절감</a>
         <a href="#shoppingmall">쇼핑몰 물류</a>
+        <a href="#coupang">쿠팡 물류</a>
         <a href="#upcoming">소량 물류</a>
-        <a href="#upcoming">쿠팡 물류</a>
       </nav>
       <div class="guide-grid">${coreArticles.map(guideCard).join("")}</div>
     </div>
@@ -1016,17 +1019,32 @@ ${header("guide")}
       <div class="guide-grid">${shoppingmallGuides.map((article, index) => guideCard(article, index + coreArticles.length)).join("")}</div>
     </div>
   </section>
-  <section class="section" id="upcoming">
+  <section class="section" id="coupang">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">쿠팡 물류 가이드</span>
+        <h2>밀크런·로켓그로스 입고를 더 정확하게</h2>
+        <p>쿠팡 물류센터로 보내기 전 상품과 재고를 준비하는 방법부터 자사몰 공동재고와 반품 관리까지 판매자가 확인할 기준을 정리했습니다.</p>
+      </div>
+      <div class="hero-actions" style="margin-bottom:28px">
+        <a class="btn primary" href="./coupang-logistics.html">쿠팡 물류대행 서비스 보기</a>
+      </div>
+      <div class="guide-grid">${coupangGuides
+        .map((article, index) => guideCard(article, index + coreArticles.length + shoppingmallGuides.length))
+        .join("")}</div>
+    </div>
+  </section>
+  <section class="section soft" id="upcoming">
     <div class="wrap">
       <div class="section-head">
         <span class="eyebrow">다음 가이드</span>
         <h2>판매 채널과 상품 특성별로 확장합니다</h2>
-        <p>소량 출고, 쿠팡 물류와 반품 관리처럼 실제 상담에서 자주 나오는 주제를 순서대로 추가합니다.</p>
+        <p>소량 출고, 대형화물과 재고 관리처럼 실제 상담에서 자주 나오는 주제를 순서대로 추가합니다.</p>
       </div>
       <div class="guide-grid">
-        ${comingCard("04", "소량 물류", "소량 물류대행 업체 선택 기준", "출고량이 적을 때 확인해야 할 비용, 보관, 최소 조건을 정리합니다.")}
-        ${comingCard("05", "쿠팡 물류", "쿠팡 밀크런 준비 과정", "밀크런 이용 전 상품과 입고 정보를 어떻게 준비하는지 설명합니다.")}
-        ${comingCard("06", "재고·반품", "재고관리와 반품 처리 효율화", "입출고 수량과 반품 재고를 안정적으로 관리하는 기준을 다룹니다.")}
+        ${comingCard("12", "소량 물류", "소량 물류대행 업체 선택 기준", "출고량이 적을 때 확인해야 할 비용, 보관, 최소 조건을 정리합니다.")}
+        ${comingCard("13", "대형화물", "대형화물 입고와 보관 기준", "부피와 중량이 큰 상품의 입고, 보관과 출고 조건을 다룹니다.")}
+        ${comingCard("14", "재고 운영", "재고 회전율과 장기재고 관리", "판매 속도에 맞춰 적정 재고를 유지하는 방법을 설명합니다.")}
       </div>
     </div>
   </section>
@@ -1097,6 +1115,12 @@ function renderArticle(article, index) {
     .filter((item) => item.slug !== article.slug)
     .sort((a, b) => Number((b.cluster || "core") === cluster) - Number((a.cluster || "core") === cluster))
     .slice(0, 3);
+  const clusterLanding =
+    cluster === "shoppingmall"
+      ? { href: "./shoppingmall-logistics.html", title: "쇼핑몰 물류대행 서비스" }
+      : cluster === "coupang"
+        ? { href: "./coupang-logistics.html", title: "쿠팡 물류대행 서비스" }
+        : null;
   const source = article.slug.replace(".html", "");
   return `<!DOCTYPE html>
 <html lang="ko">
@@ -1162,10 +1186,10 @@ ${header("guide", source)}
             <span>가이드 읽기 →</span>
           </a>`
             )
-            .join("")}${cluster === "shoppingmall"
+            .join("")}${clusterLanding
             ? `
-          <a class="related-card" href="./shoppingmall-logistics.html">
-            <b>쇼핑몰 물류대행 서비스</b>
+          <a class="related-card" href="${clusterLanding.href}">
+            <b>${clusterLanding.title}</b>
             <span>서비스 확인하기 →</span>
           </a>`
             : ""}
