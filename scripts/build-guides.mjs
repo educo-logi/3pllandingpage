@@ -4,6 +4,7 @@ import { coupangArticles } from "./guide-data-coupang.mjs";
 import { inventoryArticles } from "./guide-data-inventory.mjs";
 import { smallVolumeArticles } from "./guide-data-small-volume.mjs";
 import { largeCargoArticles } from "./guide-data-large-cargo.mjs";
+import { quoteArticles } from "./guide-data-quote.mjs";
 
 const baseUrl = "https://lds1202.github.io/landingpage_001";
 const today = "2026-07-27";
@@ -314,6 +315,7 @@ const articles = [
   ...inventoryArticles,
   ...smallVolumeArticles,
   ...largeCargoArticles,
+  ...quoteArticles,
 ];
 
 const sharedCss = String.raw`
@@ -911,7 +913,7 @@ function scripts() {
 }
 
 function guideIcon(index) {
-  return ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24"][index] || "•";
+  return ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28"][index] || "•";
 }
 
 function guideCard(article, index) {
@@ -942,7 +944,7 @@ function renderHub() {
   const canonical = `${baseUrl}/logistics-guide.html`;
   const title = "3PL 물류대행 가이드 | 바인그룹 물류센터";
   const description =
-    "3PL 물류대행, 소량·대형화물 물류대행, 쇼핑몰 출고, 쿠팡 입고, 재고·반품 관리와 물류비 절감 방법을 실무 관점에서 정리한 가이드입니다.";
+    "3PL 물류대행, 물류 견적·비용, 소량·대형화물 물류대행, 쇼핑몰 출고, 쿠팡 입고와 재고·반품 관리 방법을 실무 관점에서 정리한 가이드입니다.";
   const schema = {
     "@context": "https://schema.org",
     "@graph": [
@@ -978,6 +980,7 @@ function renderHub() {
   const inventoryGuides = articles.filter((article) => article.cluster === "inventory");
   const smallVolumeGuides = articles.filter((article) => article.cluster === "small-volume");
   const largeCargoGuides = articles.filter((article) => article.cluster === "large-cargo");
+  const quoteGuides = articles.filter((article) => article.cluster === "quote");
   return `<!DOCTYPE html>
 <html lang="ko">
 <head>${head({ title, description, canonical, schema })}</head>
@@ -989,7 +992,7 @@ ${header("guide")}
       <div>
         <span class="eyebrow">바인그룹 물류 가이드</span>
         <h1>물류를 맡기기 전,<br /><strong>판단 기준부터 확인하세요.</strong></h1>
-        <p>3PL의 기본 개념부터 소량·대형화물 물류대행, 쇼핑몰 다채널 출고, 쿠팡 입고, 재고·반품 관리와 비용 절감 방법까지 운영자가 실제로 확인해야 할 내용을 정리했습니다.</p>
+        <p>3PL의 기본 개념부터 물류 견적·비용, 소량·대형화물 물류대행, 쇼핑몰 출고, 쿠팡 입고와 재고·반품 관리까지 운영자가 실제로 확인해야 할 내용을 정리했습니다.</p>
         <div class="hero-actions">
           <a class="btn primary" href="#featured">핵심 가이드 보기</a>
           <a class="btn secondary" href="./3pl-sinchung.html?from=guide">현재 물류 상담하기</a>
@@ -1017,6 +1020,7 @@ ${header("guide")}
         <a href="#inventory">재고·반품 관리</a>
         <a href="#small-volume">소량 물류</a>
         <a href="#large-cargo">대형화물</a>
+        <a href="#quote">물류 견적</a>
       </nav>
       <div class="guide-grid">${coreArticles.map(guideCard).join("")}</div>
     </div>
@@ -1118,16 +1122,31 @@ ${header("guide")}
         .join("")}</div>
     </div>
   </section>
-  <section class="section" id="upcoming">
+  <section class="section" id="quote">
     <div class="wrap">
       <div class="section-head">
-        <span class="eyebrow">다음 가이드</span>
-        <h2>판매 채널과 상품 특성별로 확장합니다</h2>
-        <p>견적 비교처럼 실제 상담에서 자주 나오는 주제를 순서대로 추가합니다.</p>
+        <span class="eyebrow">물류 견적·비용 가이드</span>
+        <h2>단가표보다 실제 월 총비용을 정확하게</h2>
+        <p>서로 다른 3PL 견적서를 같은 범위로 비교하고, 추가비용과 자체출고 비용을 찾으며, 상담 전에 준비할 자료를 실무 기준으로 정리했습니다.</p>
       </div>
-      <div class="guide-grid">
-        ${comingCard("24", "물류 견적", "3PL 물류 견적 비교 체크리스트", "단가표에 포함된 작업 범위와 추가 비용을 같은 기준으로 비교하는 방법을 정리합니다.")}
+      <div class="hero-actions" style="margin-bottom:28px">
+        <a class="btn primary" href="./3pl-logistics-quote.html">3PL 물류 견적 안내 보기</a>
       </div>
+      <div class="guide-grid">${quoteGuides
+        .map(
+          (article, index) =>
+            guideCard(
+              article,
+              index +
+                coreArticles.length +
+                shoppingmallGuides.length +
+                coupangGuides.length +
+                inventoryGuides.length +
+                smallVolumeGuides.length +
+                largeCargoGuides.length,
+            ),
+        )
+        .join("")}</div>
     </div>
   </section>
   <section class="section">
@@ -1208,7 +1227,9 @@ function renderArticle(article, index) {
             ? { href: "./small-volume-logistics.html", title: "소량 물류대행 서비스" }
             : cluster === "large-cargo"
               ? { href: "./large-cargo-logistics.html", title: "대형화물 물류대행 서비스" }
-              : null;
+              : cluster === "quote"
+                ? { href: "./3pl-logistics-quote.html", title: "3PL 물류 견적 안내" }
+                : null;
   const source = article.slug.replace(".html", "");
   return `<!DOCTYPE html>
 <html lang="ko">
