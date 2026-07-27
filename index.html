@@ -440,6 +440,39 @@
       min-height: 210px;
     }
 
+    .benefit-card {
+      padding: 0;
+      overflow: hidden;
+    }
+
+    .benefit-title {
+      min-height: 84px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 16px 20px;
+      border-bottom: 1px solid #e8e5f0;
+      background: linear-gradient(135deg, #f2edff 0%, #edf8f2 100%);
+    }
+
+    .benefit-title .icon {
+      flex: 0 0 48px;
+      width: 48px;
+      height: 48px;
+      margin: 0;
+      border-radius: 15px;
+      background: rgba(255, 255, 255, 0.82);
+      box-shadow: 0 6px 16px rgba(43, 35, 95, 0.08);
+    }
+
+    .benefit-card .benefit-title h3 {
+      margin: 0;
+    }
+
+    .benefit-card > p {
+      padding: 20px 22px 24px;
+    }
+
     .problem-card {
       text-align: center;
     }
@@ -952,6 +985,26 @@
         padding: 22px;
       }
 
+      .benefit-card {
+        padding: 0;
+      }
+
+      .benefit-title {
+        min-height: 76px;
+        gap: 12px;
+        padding: 14px 16px;
+      }
+
+      .benefit-title .icon {
+        flex-basis: 44px;
+        width: 44px;
+        height: 44px;
+      }
+
+      .benefit-card > p {
+        padding: 18px 18px 22px;
+      }
+
       .statement {
         padding: 62px 0;
       }
@@ -1083,33 +1136,45 @@
         </div>
         <div class="benefit-grid">
           <article class="benefit-card">
-            <div class="icon">₩</div>
-            <h3>소량도 동일가 적용</h3>
+            <div class="benefit-title">
+              <div class="icon">₩</div>
+              <h3>소량도 동일가 적용</h3>
+            </div>
             <p>개별 물량은 적어도 센터 전체 대량 출고 기반으로 단가 경쟁력을 확보합니다.</p>
           </article>
           <article class="benefit-card">
-            <div class="icon">📦</div>
-            <h3>재고관리</h3>
+            <div class="benefit-title">
+              <div class="icon">📦</div>
+              <h3>재고관리</h3>
+            </div>
             <p>입고, 보관, 재고 확인, 출고 현황을 체계적으로 관리해 운영 부담을 줄입니다.</p>
           </article>
           <article class="benefit-card">
-            <div class="icon">⚡</div>
-            <h3>빠른 배송</h3>
+            <div class="benefit-title">
+              <div class="icon">⚡</div>
+              <h3>빠른 배송</h3>
+            </div>
             <p>주문 확인부터 포장, 송장, 출고까지 반복 업무를 빠르게 처리합니다.</p>
           </article>
           <article class="benefit-card">
-            <div class="icon">🚚</div>
-            <h3>대형화물 입고 가능</h3>
+            <div class="benefit-title">
+              <div class="icon">🚚</div>
+              <h3>대형화물 입고 가능</h3>
+            </div>
             <p>부피가 큰 상품과 대형화물도 입고 및 보관 조건을 상담할 수 있습니다.</p>
           </article>
           <article class="benefit-card">
-            <div class="icon">🛒</div>
-            <h3>쇼핑몰 출고</h3>
+            <div class="benefit-title">
+              <div class="icon">🛒</div>
+              <h3>쇼핑몰 출고</h3>
+            </div>
             <p>자사몰, 스마트스토어 등 온라인몰 주문 출고를 안정적으로 대행합니다.</p>
           </article>
           <article class="benefit-card">
-            <div class="icon">C</div>
-            <h3>쿠팡 대응</h3>
+            <div class="benefit-title">
+              <div class="icon">C</div>
+              <h3>쿠팡 대응</h3>
+            </div>
             <p>쿠팡 밀크런, 로켓그로스 등 쿠팡 판매자를 위한 물류 흐름도 상담 가능합니다.</p>
           </article>
         </div>
