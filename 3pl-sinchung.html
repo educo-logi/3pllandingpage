@@ -420,7 +420,7 @@
 <body>
   <div class="page">
     <header class="header">
-      <a class="back" href="./3PL1.html" aria-label="랜딩페이지로 돌아가기">
+      <a class="back" id="backLink" href="./" aria-label="이전 페이지로 돌아가기">
         <span aria-hidden="true">‹</span>
         <span>돌아가기</span>
       </a>
@@ -445,7 +445,7 @@
       <form id="logisticsForm">
         <input type="hidden" name="formType" value="3pl" />
         <input type="hidden" name="source" value="3pl-sinchung.html" />
-        <input type="hidden" id="landingPageInput" name="landingPage" value="3PL1" />
+        <input type="hidden" id="landingPageInput" name="landingPage" value="main" />
         <input type="hidden" id="pageUrlInput" name="pageUrl" value="" />
         <input type="hidden" id="submittedAtInput" name="submittedAt" value="" />
         <input type="hidden" id="salesChannelsInput" name="salesChannels" value="" />
@@ -614,6 +614,15 @@
     var pageUrlInput = document.getElementById('pageUrlInput');
     var submittedAtInput = document.getElementById('submittedAtInput');
     var salesChannelsInput = document.getElementById('salesChannelsInput');
+    var backLink = document.getElementById('backLink');
+    var returnTargets = {
+      main: './',
+      '3PL1': './3PL1.html',
+      guide: './logistics-guide.html',
+      'guide-3pl-basics': './guide-3pl-basics.html',
+      'guide-self-shipping-vs-3pl': './guide-self-shipping-vs-3pl.html',
+      'guide-3pl-cost-saving': './guide-3pl-cost-saving.html'
+    };
 
     function formatPhone(value) {
       var numbers = String(value || '').replace(/\D/g, '').slice(0, 11);
@@ -629,10 +638,11 @@
 
     function syncMeta() {
       var params = new URLSearchParams(window.location.search);
-      var from = params.get('from') || '3PL1';
+      var from = params.get('from') || 'main';
       landingPageInput.value = from;
       pageUrlInput.value = window.location.href;
       submittedAtInput.value = new Date().toISOString();
+      backLink.href = returnTargets[from] || './';
     }
 
     function syncChannels() {
@@ -676,7 +686,7 @@
         showMessage('신청이 접수되었습니다. 확인 후 연락드리겠습니다.', 'success');
         form.reset();
         salesChannelsInput.value = '';
-        landingPageInput.value = new URLSearchParams(window.location.search).get('from') || '3PL1';
+        landingPageInput.value = new URLSearchParams(window.location.search).get('from') || 'main';
         phoneInput.value = '';
       } catch (error) {
         showMessage('접수 중 오류가 발생했습니다. 전화 상담 버튼으로 문의해주세요.', 'error');

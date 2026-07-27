@@ -189,6 +189,20 @@
       box-shadow: 0 10px 20px rgba(43, 35, 95, 0.22);
     }
 
+    .mobile-guide {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      min-height: 38px;
+      padding: 0 13px;
+      border-radius: 999px;
+      background: #f1ecff;
+      color: var(--purple-dark);
+      font-size: 13px;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
     .hero {
       position: relative;
       overflow: hidden;
@@ -419,6 +433,88 @@
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 18px;
+    }
+
+    .guide-preview-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .guide-preview-card {
+      min-height: 270px;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fff;
+      box-shadow: 0 12px 30px rgba(22, 20, 45, 0.06);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .guide-preview-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+    }
+
+    .guide-preview-title {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      padding: 15px 18px;
+      border-bottom: 1px solid #e8e5f0;
+      background: linear-gradient(135deg, #f2edff 0%, #edf8f2 100%);
+    }
+
+    .guide-preview-title b {
+      flex: 0 0 44px;
+      width: 44px;
+      height: 44px;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.84);
+      color: var(--purple);
+      font-size: 15px;
+      font-weight: 950;
+    }
+
+    .guide-preview-title h3 {
+      margin: 0;
+      font-size: 19px;
+      line-height: 1.35;
+      font-weight: 950;
+    }
+
+    .guide-preview-body {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      padding: 20px 22px 22px;
+    }
+
+    .guide-preview-body p {
+      margin: 0;
+      color: #5f6472;
+      font-size: 15px;
+      line-height: 1.7;
+      font-weight: 700;
+    }
+
+    .guide-preview-body span {
+      margin-top: auto;
+      padding-top: 18px;
+      color: var(--purple);
+      font-size: 14px;
+      font-weight: 900;
+    }
+
+    .guide-more {
+      display: flex;
+      justify-content: center;
+      margin-top: 24px;
     }
 
     .problem-card,
@@ -968,7 +1064,8 @@
 
       .problem-grid,
       .benefit-grid,
-      .target-grid {
+      .target-grid,
+      .guide-preview-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
@@ -978,6 +1075,10 @@
 
       .nav {
         display: none;
+      }
+
+      .mobile-guide {
+        display: inline-flex;
       }
     }
 
@@ -1057,6 +1158,7 @@
       .problem-grid,
       .benefit-grid,
       .target-grid,
+      .guide-preview-grid,
       .flow {
         grid-template-columns: 1fr;
       }
@@ -1188,9 +1290,11 @@
         <a href="#benefits">장점</a>
         <a href="#services">서비스 범위</a>
         <a href="#process">진행 절차</a>
+        <a href="./logistics-guide.html">물류 가이드</a>
         <a href="#faq">FAQ</a>
         <a class="nav-cta" href="./3pl-sinchung.html?from=3PL1">무료 상담</a>
       </nav>
+      <a class="mobile-guide" href="./logistics-guide.html">물류 가이드</a>
     </div>
   </header>
 
@@ -1394,7 +1498,32 @@
       </div>
     </section>
 
-    <section class="section soft fade">
+    <section class="section soft fade" id="guide">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="section-kicker">물류 운영 가이드</span>
+          <h2>맡기기 전에 필요한 기준부터 확인하세요</h2>
+          <p>3PL의 기본 개념, 자체출고와의 차이, 비용 절감 방법을 먼저 이해하면 우리 업체에 맞는 운영 조건을 더 정확하게 비교할 수 있습니다.</p>
+        </div>
+        <div class="guide-preview-grid">
+          <a class="guide-preview-card" href="./guide-3pl-basics.html">
+            <div class="guide-preview-title"><b>01</b><h3>3PL 물류대행이란?</h3></div>
+            <div class="guide-preview-body"><p>입고부터 재고관리, 포장, 출고와 반품까지 3PL이 담당하는 업무 범위를 정리했습니다.</p><span>가이드 읽기 →</span></div>
+          </a>
+          <a class="guide-preview-card" href="./guide-self-shipping-vs-3pl.html">
+            <div class="guide-preview-title"><b>02</b><h3>자체출고와 3PL의 차이</h3></div>
+            <div class="guide-preview-body"><p>비용, 운영 시간, 공간과 확장성을 기준으로 우리 브랜드에 맞는 방식을 비교합니다.</p><span>가이드 읽기 →</span></div>
+          </a>
+          <a class="guide-preview-card" href="./guide-3pl-cost-saving.html">
+            <div class="guide-preview-title"><b>03</b><h3>3PL 물류비 절감 방법</h3></div>
+            <div class="guide-preview-body"><p>택배비뿐 아니라 인건비, 포장 자재, 보관 공간과 반품 비용까지 함께 점검합니다.</p><span>가이드 읽기 →</span></div>
+          </a>
+        </div>
+        <div class="guide-more"><a class="btn secondary" href="./logistics-guide.html">물류 가이드 전체 보기</a></div>
+      </div>
+    </section>
+
+    <section class="section white fade">
       <div class="wrap location-grid">
         <div class="location-card">
           <div class="location-title">
