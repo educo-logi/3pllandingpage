@@ -434,7 +434,7 @@
           <b>빠른 상담 전화</b>
           <span>바인그룹 물류센터 · 경기도 고양시 일산동구 지영동</span>
         </div>
-        <a href="tel:01062565593">010-6256-5593</a>
+        <a href="tel:01062565593">전화 상담</a>
       </div>
     </section>
 
@@ -462,7 +462,7 @@
           </div>
           <label class="field" style="margin-top:12px">
             <span>연락처 <b class="req">*</b></span>
-            <input id="phoneInput" type="tel" name="phone" placeholder="010-6256-5593" inputmode="numeric" autocomplete="tel" maxlength="13" required />
+            <input id="phoneInput" type="tel" name="phone" placeholder="연락 가능한 번호를 입력해주세요" inputmode="numeric" autocomplete="tel" maxlength="13" required />
           </label>
         </section>
 
@@ -597,7 +597,7 @@
         <div class="message" id="formMessage" role="status" aria-live="polite"></div>
       </form>
 
-      <p class="foot-note">전화 상담: 010-6256-5593 · 바인그룹 물류센터 · 경기도 고양시 일산동구 지영동</p>
+      <p class="foot-note">전화 상담 버튼을 누르면 바로 연결됩니다. · 바인그룹 물류센터 · 경기도 고양시 일산동구 지영동</p>
     </main>
   </div>
 
@@ -677,7 +677,7 @@
         landingPageInput.value = new URLSearchParams(window.location.search).get('from') || '3PL1';
         phoneInput.value = '';
       } catch (error) {
-        showMessage('접수 중 오류가 발생했습니다. 전화 상담 010-6256-5593으로 문의해주세요.', 'error');
+        showMessage('접수 중 오류가 발생했습니다. 전화 상담 버튼으로 문의해주세요.', 'error');
       } finally {
         submitButton.disabled = false;
         submitButton.textContent = '무료 물류대행 상담 신청하기';
