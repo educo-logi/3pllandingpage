@@ -455,6 +455,28 @@
     .footer strong { display: block; margin-bottom: 8px; color: var(--purple-dark); }
     .footer p { margin: 0; color: #777c8b; font-size: 13px; line-height: 1.65; }
     .footer-links { display: flex; flex-wrap: wrap; gap: 16px; font-size: 13px; font-weight: 850; }
+    .service-network { padding: 58px 0; background: #f7f6fb; }
+    .service-network-head { display: flex; align-items: end; justify-content: space-between; gap: 24px; margin-bottom: 22px; }
+    .service-network h2 { margin: 0; font-size: 30px; }
+    .service-network-head p { max-width: 560px; margin: 0; color: var(--sub); line-height: 1.7; }
+    .service-network-links { display: grid; grid-template-columns: repeat(6,minmax(0,1fr)); gap: 10px; }
+    .service-network-link {
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 10px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: #fff;
+      color: var(--purple-dark);
+      text-align: center;
+      font-size: 14px;
+      font-weight: 900;
+      line-height: 1.4;
+    }
+    .service-network-link:hover { border-color: #bcb2df; transform: translateY(-2px); }
+    .service-network-link[aria-current="page"] { border-color: #7460b5; background: linear-gradient(135deg,#f1ecff,#eef7ec); }
     .floating {
       position: fixed;
       left: 50%;
@@ -492,6 +514,7 @@
     @media (max-width: 900px) {
       .nav { display: none; }
       .mobile-nav { display: flex; }
+      .service-network-links { grid-template-columns: repeat(3,minmax(0,1fr)); }
       .hero { min-height: 730px; align-items: flex-end; }
       .hero::after { background: linear-gradient(180deg,rgba(255,255,255,.08) 0%,rgba(255,255,255,.96) 46%,#fff 70%); }
       .hero-image { height: 54%; align-self: flex-start; object-position: 66% center; }
@@ -513,7 +536,9 @@
       .brand { gap: 8px; }
       .brand img { width: 105px; }
       .brand span { padding-left: 8px; font-size: 12px; }
-      .mobile-nav a:first-child { display: none; }
+      .service-network-head { display: block; }
+      .service-network-head p { margin-top: 10px; }
+      .service-network-links { grid-template-columns: repeat(2,minmax(0,1fr)); }
       .hero { min-height: 780px; }
       .hero-image { height: 42%; object-position: 68% center; }
       .hero-inner { padding-top: 294px; padding-bottom: 62px; }
@@ -558,13 +583,15 @@
       </a>
       <nav class="nav" aria-label="주요 메뉴">
         <a href="./">3PL 서비스</a>
+        <a href="./#benefits">서비스 분야</a>
         <a href="#problems">고민 해결</a>
         <a href="#scope">지원 범위</a>
         <a href="./logistics-guide.html">물류 가이드</a>
+        <a href="#faq">FAQ</a>
         <a class="nav-cta" href="./3pl-sinchung.html?from=coupang-logistics">무료 상담</a>
       </nav>
       <div class="mobile-nav">
-        <a href="./">3PL</a>
+        <a href="./#benefits">서비스</a>
         <a href="./logistics-guide.html">가이드</a>
       </div>
     </div>
@@ -795,6 +822,23 @@
       </div>
     </section>
 
+    <section class="service-network fade" aria-labelledby="service-network-title">
+      <div class="wrap">
+        <div class="service-network-head">
+          <h2 id="service-network-title">필요한 물류 서비스도 함께 확인하세요</h2>
+          <p>판매 채널, 출고량, 상품 크기와 운영 과제에 맞는 서비스 페이지로 바로 이동할 수 있습니다.</p>
+        </div>
+        <nav class="service-network-links" aria-label="물류 서비스 분야">
+          <a class="service-network-link" href="./shoppingmall-logistics.html">쇼핑몰 물류</a>
+          <a class="service-network-link" aria-current="page" href="./coupang-logistics.html">쿠팡 물류</a>
+          <a class="service-network-link" href="./inventory-return-logistics.html">재고·반품</a>
+          <a class="service-network-link" href="./small-volume-logistics.html">소량 물류</a>
+          <a class="service-network-link" href="./large-cargo-logistics.html">대형화물</a>
+          <a class="service-network-link" href="./3pl-logistics-quote.html">물류 견적</a>
+        </nav>
+      </div>
+    </section>
+
     <section class="final-cta">
       <div class="wrap">
         <div class="final-box fade">
@@ -837,8 +881,11 @@
     }
 
     document.querySelectorAll('.faq-question').forEach(function(button) {
+      button.setAttribute('aria-expanded', String(button.closest('.faq-item').classList.contains('open')));
       button.addEventListener('click', function() {
-        button.closest('.faq-item').classList.toggle('open');
+        var item = button.closest('.faq-item');
+        item.classList.toggle('open');
+        button.setAttribute('aria-expanded', String(item.classList.contains('open')));
       });
     });
 

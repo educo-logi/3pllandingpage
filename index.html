@@ -189,16 +189,22 @@
       box-shadow: 0 10px 20px rgba(43, 35, 95, 0.22);
     }
 
-    .mobile-guide {
+    .mobile-nav {
       display: none;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .mobile-nav a {
+      display: inline-flex;
       align-items: center;
       justify-content: center;
       min-height: 38px;
-      padding: 0 13px;
+      padding: 0 11px;
       border-radius: 999px;
       background: #f1ecff;
       color: var(--purple-dark);
-      font-size: 13px;
+      font-size: 12px;
       font-weight: 900;
       white-space: nowrap;
     }
@@ -1111,8 +1117,8 @@
         display: none;
       }
 
-      .mobile-guide {
-        display: inline-flex;
+      .mobile-nav {
+        display: flex;
       }
     }
 
@@ -1321,17 +1327,17 @@
         <span>물류센터</span>
       </a>
       <nav class="nav" aria-label="주요 메뉴">
-        <a href="#benefits">장점</a>
-        <a href="./shoppingmall-logistics.html">쇼핑몰 물류</a>
-        <a href="./small-volume-logistics.html">소량 물류</a>
-        <a href="./large-cargo-logistics.html">대형화물</a>
+        <a href="#benefits">서비스 분야</a>
         <a href="#services">서비스 범위</a>
         <a href="#process">진행 절차</a>
         <a href="./logistics-guide.html">물류 가이드</a>
         <a href="#faq">FAQ</a>
         <a class="nav-cta" href="./3pl-sinchung.html?from=main">무료 상담</a>
       </nav>
-      <a class="mobile-guide" href="./logistics-guide.html">물류 가이드</a>
+      <div class="mobile-nav">
+        <a href="#benefits">서비스</a>
+        <a href="./logistics-guide.html">가이드</a>
+      </div>
     </div>
   </header>
 
@@ -1661,8 +1667,11 @@
 
   <script>
     document.querySelectorAll('.faq-question').forEach(function(button) {
+      button.setAttribute('aria-expanded', String(button.closest('.faq-item').classList.contains('open')));
       button.addEventListener('click', function() {
-        button.closest('.faq-item').classList.toggle('open');
+        var item = button.closest('.faq-item');
+        item.classList.toggle('open');
+        button.setAttribute('aria-expanded', String(item.classList.contains('open')));
       });
     });
 

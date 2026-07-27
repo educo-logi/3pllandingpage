@@ -163,7 +163,8 @@
       color: #fff !important;
       background: var(--purple);
     }
-    .mobile-guide { display: none; font-size: 14px; font-weight: 800; color: var(--purple); }
+    .mobile-nav { display: none; align-items: center; gap: 6px; }
+    .mobile-nav a { padding: 9px 10px; border-radius: 999px; background: #f1ecff; color: var(--purple); font-size: 12px; font-weight: 900; }
     .hero {
       overflow: hidden;
       background: linear-gradient(120deg, #f2efff 0%, #f6f8ff 52%, #edf7f2 100%);
@@ -310,6 +311,14 @@
     .footer-inner { display: flex; justify-content: space-between; gap: 28px; }
     .footer strong { display: block; margin-bottom: 8px; color: white; font-size: 16px; }
     .footer-links { display: flex; flex-wrap: wrap; gap: 16px; }
+    .service-network { padding: 58px 0; background: #f7f6fb; }
+    .service-network-head { display: flex; align-items: end; justify-content: space-between; gap: 24px; margin-bottom: 22px; }
+    .service-network h2 { margin: 0; font-size: 30px; }
+    .service-network-head p { max-width: 560px; margin: 0; color: var(--sub); line-height: 1.7; }
+    .service-network-links { display: grid; grid-template-columns: repeat(6,minmax(0,1fr)); gap: 10px; }
+    .service-network-link { min-height: 82px; display: flex; align-items: center; justify-content: center; padding: 14px 10px; border: 1px solid var(--line); border-radius: 10px; background: #fff; color: var(--purple-dark); text-align: center; font-size: 14px; font-weight: 900; line-height: 1.4; }
+    .service-network-link:hover { border-color: #bcb2df; transform: translateY(-2px); }
+    .service-network-link[aria-current="page"] { border-color: #7460b5; background: linear-gradient(135deg,#f1ecff,#eef7ec); }
     .floating {
       position: fixed;
       z-index: 70;
@@ -332,7 +341,8 @@
 
     @media (max-width: 980px) {
       .nav { display: none; }
-      .mobile-guide { display: block; }
+      .mobile-nav { display: flex; }
+      .service-network-links { grid-template-columns: repeat(3,minmax(0,1fr)); }
       .hero-grid { min-height: auto; grid-template-columns: 1fr; gap: 0; }
       .hero-copy { padding-bottom: 38px; }
       .hero-visual { width: min(620px, 100%); margin: 0 auto; }
@@ -354,7 +364,9 @@
       .brand { gap: 8px; font-size: 13px; }
       .brand img { width: 126px; }
       .brand span { padding-left: 8px; }
-      .mobile-guide { font-size: 12px; }
+      .service-network-head { display: block; }
+      .service-network-head p { margin-top: 10px; }
+      .service-network-links { grid-template-columns: repeat(2,minmax(0,1fr)); }
       .hero-copy { padding: 52px 0 34px; }
       .hero h1 { font-size: 38px; }
       .hero-copy > p { font-size: 17px; }
@@ -397,14 +409,14 @@
         <span>물류센터</span>
       </a>
       <nav class="nav" aria-label="주요 메뉴">
-        <a href="#problems">운영 문제</a>
+        <a href="./">3PL 서비스</a>
+        <a href="./#benefits">서비스 분야</a>
         <a href="#service">서비스 범위</a>
-        <a href="#returns">반품 분류</a>
-        <a href="#guides">가이드</a>
+        <a href="./logistics-guide.html">물류 가이드</a>
         <a href="#faq">FAQ</a>
         <a class="nav-cta" href="./3pl-sinchung.html?from=inventory-return-logistics">무료 상담</a>
       </nav>
-      <a class="mobile-guide" href="./logistics-guide.html">물류 가이드</a>
+      <div class="mobile-nav"><a href="./#benefits">서비스</a><a href="./logistics-guide.html">가이드</a></div>
     </div>
   </header>
 
@@ -594,6 +606,23 @@
             <div class="faq-answer"><p>판매 속도와 현재 재고를 함께 확인해 장기재고와 품절 위험 상품을 구분하고, 발주나 행사 준비에 참고할 수 있는 기준을 협의합니다.</p></div>
           </article>
         </div>
+      </div>
+    </section>
+
+    <section class="service-network fade" aria-labelledby="service-network-title">
+      <div class="wrap">
+        <div class="service-network-head">
+          <h2 id="service-network-title">필요한 물류 서비스도 함께 확인하세요</h2>
+          <p>판매 채널, 출고량, 상품 크기와 운영 과제에 맞는 서비스 페이지로 바로 이동할 수 있습니다.</p>
+        </div>
+        <nav class="service-network-links" aria-label="물류 서비스 분야">
+          <a class="service-network-link" href="./shoppingmall-logistics.html">쇼핑몰 물류</a>
+          <a class="service-network-link" href="./coupang-logistics.html">쿠팡 물류</a>
+          <a class="service-network-link" aria-current="page" href="./inventory-return-logistics.html">재고·반품</a>
+          <a class="service-network-link" href="./small-volume-logistics.html">소량 물류</a>
+          <a class="service-network-link" href="./large-cargo-logistics.html">대형화물</a>
+          <a class="service-network-link" href="./3pl-logistics-quote.html">물류 견적</a>
+        </nav>
       </div>
     </section>
 
