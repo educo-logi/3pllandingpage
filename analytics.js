@@ -1,7 +1,7 @@
 (function () {
   "use strict";
 
-  var measurementId = "G-1K0MTEPTS0";
+  var measurementId = "G-XVM56BEW3F";
   var script = document.createElement("script");
   script.async = true;
   script.src =
