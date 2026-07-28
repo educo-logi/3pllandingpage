@@ -416,6 +416,7 @@
       }
     }
   </style>
+  <script src="/analytics.js" defer></script>
 </head>
 <body>
   <div class="page">
@@ -712,6 +713,15 @@
           mode: 'no-cors',
           body: formData
         });
+
+        if (typeof window.trackLogisticsEvent === 'function') {
+          window.trackLogisticsEvent('generate_lead', {
+            lead_type: '3pl_consultation',
+            landing_source: landingPageInput.value,
+            monthly_shipments: formData.get('monthlyShipments') || '',
+            sales_channels: salesChannelsInput.value
+          });
+        }
 
         showMessage('신청이 접수되었습니다. 확인 후 연락드리겠습니다.', 'success');
         form.reset();

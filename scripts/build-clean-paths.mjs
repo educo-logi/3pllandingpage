@@ -58,6 +58,14 @@ function setIndexing(source, indexable) {
   return result;
 }
 
+function ensureAnalytics(source) {
+  if (source.includes('src="/analytics.js"')) return source;
+  return source.replace(
+    "</head>",
+    '  <script src="/analytics.js" defer></script>\n</head>',
+  );
+}
+
 function normalizeUrls(source, file) {
   let result = source;
 
@@ -92,7 +100,7 @@ function normalizeUrls(source, file) {
     `<meta property="og:url" content="${canonical}" />`,
   );
 
-  return result;
+  return ensureAnalytics(result);
 }
 
 function outputFileFor(publicPath) {

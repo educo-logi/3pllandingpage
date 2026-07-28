@@ -109,6 +109,9 @@ for (const [legacyFile, publicPath] of fixedRoutes) {
   if ((source.match(/<h1\b/gi) || []).length !== 1) {
     errors.push(`${publicPath}: page must contain exactly one h1`);
   }
+  if (!source.includes('src="/analytics.js"')) {
+    errors.push(`${publicPath}: analytics script is missing`);
+  }
   if (
     source.includes("lds1202.github.io/landingpage_001") ||
     source.includes("educo-logi.github.io/3pllandingpage")
@@ -184,6 +187,9 @@ for (const [publicPath, count] of incoming) {
 }
 
 const consultation = pages.get("/consultation/")?.source || "";
+if (!consultation.includes("trackLogisticsEvent('generate_lead'")) {
+  errors.push("/consultation/: generate_lead tracking is missing");
+}
 const targetBlock = match(
   consultation,
   /var\s+returnTargets\s*=\s*\{([\s\S]*?)\n\s*\};/,
