@@ -6,7 +6,7 @@ import { smallVolumeArticles } from "./guide-data-small-volume.mjs";
 import { largeCargoArticles } from "./guide-data-large-cargo.mjs";
 import { quoteArticles } from "./guide-data-quote.mjs";
 
-const baseUrl = "https://lds1202.github.io/landingpage_001";
+const baseUrl = "https://3pl.33pl.co.kr";
 const today = "2026-07-27";
 
 const coreArticles = [
@@ -1346,3 +1346,5 @@ await Promise.all(
 );
 
 console.log(`Generated logistics-guide.html and ${articles.length} guide articles.`);
+
+await import("./build-clean-paths.mjs");

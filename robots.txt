@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://lds1202.github.io/landingpage_001/sitemap.xml
+Sitemap: https://3pl.33pl.co.kr/sitemap.xml

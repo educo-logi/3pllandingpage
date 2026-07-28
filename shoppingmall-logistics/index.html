@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>쇼핑몰 물류대행 | 자사몰·스마트스토어 다채널 출고 - 바인그룹</title>
+  <meta name="description" content="자사몰, 스마트스토어, 쿠팡 주문의 입고, 보관, 재고관리, 브랜드 포장, 출고와 반품을 한 번에 맡기는 쇼핑몰 3PL 물류대행 서비스입니다." />
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
+  <link rel="canonical" href="https://3pl.33pl.co.kr/shoppingmall-logistics/" />
+  <meta property="og:locale" content="ko_KR" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="바인그룹 물류센터" />
+  <meta property="og:title" content="쇼핑몰 물류대행 | 자사몰·스마트스토어 다채널 출고" />
+  <meta property="og:description" content="여러 판매 채널의 주문, 재고, 포장과 출고를 한 곳에서 운영하세요." />
+  <meta property="og:url" content="https://3pl.33pl.co.kr/shoppingmall-logistics/" />
+  <meta property="og:image" content="https://3pl.33pl.co.kr/3pl-hero.png" />
+  <meta property="og:image:alt" content="쇼핑몰 주문 상품을 출고하는 3PL 물류센터" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Service",
+        "@id": "https://3pl.33pl.co.kr/shoppingmall-logistics/#service",
+        "name": "쇼핑몰 물류대행",
+        "serviceType": "자사몰·스마트스토어 3PL 물류대행",
+        "description": "온라인 쇼핑몰 상품의 입고, 보관, 재고관리, 브랜드 포장, 출고, 배송 연계와 반품 관리를 지원합니다.",
+        "provider": {
+          "@type": "Organization",
+          "name": "바인그룹 물류센터",
+          "url": "https://3pl.33pl.co.kr/"
+        },
+        "areaServed": {
+          "@type": "Country",
+          "name": "대한민국"
+        },
+        "url": "https://3pl.33pl.co.kr/shoppingmall-logistics/"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "바인그룹 물류센터",
+            "item": "https://3pl.33pl.co.kr/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "쇼핑몰 물류대행",
+            "item": "https://3pl.33pl.co.kr/shoppingmall-logistics/"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "자사몰과 스마트스토어 주문을 함께 출고할 수 있나요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "판매 채널별 주문 전달 방식과 출고 기준을 확인한 뒤 한 센터에서 입고, 재고관리, 포장과 출고를 운영할 수 있습니다."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "출고량이 적은 쇼핑몰도 물류대행을 맡길 수 있나요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "가능합니다. 상품 규격, 재고량, 포장 방식과 월 출고량을 확인해 소량 브랜드에 맞는 운영 조건을 상담합니다."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "브랜드 박스나 사은품 포장도 가능한가요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "포장 자재와 적용 주문, 작업 순서를 사전에 정하면 브랜드 박스, 안내물, 사은품과 세트 구성의 가능 범위를 협의할 수 있습니다."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+  <style>
+    :root {
+      --ink: #17162f;
+      --sub: #5d6270;
+      --purple-dark: #2d2367;
+      --purple: #6540b5;
+      --purple-light: #f1ecff;
+      --green: #5eaa38;
+      --green-dark: #397723;
+      --green-light: #eef8ea;
+      --line: #e3e5ec;
+      --soft: #f6f7fb;
+      --shadow: 0 18px 48px rgba(31, 27, 68, 0.1);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: #fff;
+      font-family: "Pretendard Variable", Pretendard, "Noto Sans KR", Arial, sans-serif;
+      letter-spacing: 0;
+      word-break: keep-all;
+    }
+    body, button, a { -webkit-tap-highlight-color: transparent; }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    button { color: inherit; font: inherit; }
+    .wrap { width: min(1180px, 100%); margin: 0 auto; padding: 0 24px; }
+    .notice {
+      padding: 8px 16px;
+      color: #73401a;
+      background: #fff7ed;
+      text-align: center;
+      font-size: 13px;
+      font-weight: 800;
+    }
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 80;
+      border-bottom: 1px solid rgba(227,229,236,.9);
+      background: rgba(255,255,255,.94);
+      backdrop-filter: blur(14px);
+    }
+    .header-inner {
+      min-height: 74px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .brand { min-width: 0; display: flex; align-items: center; gap: 12px; }
+    .brand img { width: 150px; }
+    .brand span {
+      padding-left: 12px;
+      border-left: 1px solid var(--line);
+      color: var(--purple-dark);
+      font-size: 15px;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+    .nav { display: flex; align-items: center; gap: 28px; font-size: 14px; font-weight: 850; }
+    .nav a:hover { color: var(--purple); }
+    .nav .nav-cta {
+      padding: 13px 20px;
+      border-radius: 8px;
+      color: #fff;
+      background: var(--purple-dark);
+      box-shadow: 0 10px 24px rgba(45,35,103,.18);
+    }
+    .mobile-nav { display: none; align-items: center; gap: 8px; }
+    .mobile-nav a {
+      padding: 9px 11px;
+      border: 1px solid var(--line);
+      border-radius: 7px;
+      color: var(--purple-dark);
+      font-size: 12px;
+      font-weight: 900;
+    }
+    .hero {
+      position: relative;
+      min-height: 680px;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background: #f8f8fc;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg,#fff 0%,rgba(255,255,255,.98) 38%,rgba(255,255,255,.5) 63%,rgba(255,255,255,.06) 100%);
+      pointer-events: none;
+    }
+    .hero-image {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+    .hero-inner { position: relative; z-index: 2; padding-top: 72px; padding-bottom: 76px; }
+    .hero-copy { width: min(660px, 62%); }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--purple);
+      font-size: 14px;
+      font-weight: 900;
+    }
+    .eyebrow i { width: 18px; height: 18px; }
+    .hero h1 {
+      margin: 20px 0 24px;
+      font-size: clamp(46px,5vw,72px);
+      line-height: 1.12;
+      letter-spacing: 0;
+    }
+    .hero h1 strong {
+      color: var(--purple);
+      background: linear-gradient(90deg,var(--purple),#3b7d63);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .hero-copy > p {
+      max-width: 600px;
+      margin: 0;
+      color: #414657;
+      font-size: 20px;
+      line-height: 1.75;
+      font-weight: 650;
+    }
+    .hero-points {
+      margin-top: 28px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .hero-points span {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 10px 13px;
+      border: 1px solid rgba(101,64,181,.14);
+      border-radius: 7px;
+      color: var(--purple-dark);
+      background: rgba(255,255,255,.86);
+      font-size: 13px;
+      font-weight: 850;
+      box-shadow: 0 8px 20px rgba(45,35,103,.06);
+    }
+    .hero-points i { width: 16px; height: 16px; color: var(--green); }
+    .hero-actions { margin-top: 32px; display: flex; flex-wrap: wrap; gap: 12px; }
+    .btn {
+      min-height: 52px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 0 24px;
+      border: 1px solid transparent;
+      border-radius: 8px;
+      font-weight: 900;
+    }
+    .btn i { width: 19px; height: 19px; }
+    .btn.primary { color: #fff; background: linear-gradient(135deg,var(--purple-dark),var(--purple)); }
+    .btn.secondary { color: var(--purple-dark); border-color: #d9d8e6; background: #fff; }
+    .trust {
+      position: relative;
+      z-index: 4;
+      margin-top: -34px;
+    }
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(4,minmax(0,1fr));
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: #fff;
+      box-shadow: var(--shadow);
+    }
+    .trust-grid div { padding: 24px 20px; text-align: center; }
+    .trust-grid div + div { border-left: 1px solid var(--line); }
+    .trust-grid b { display: block; color: var(--purple); font-size: 20px; }
+    .trust-grid span { display: block; margin-top: 7px; color: var(--sub); font-size: 13px; line-height: 1.45; font-weight: 700; }
+    .section { padding: 96px 0; }
+    .section.soft { background: var(--soft); }
+    .section-head { max-width: 760px; margin-bottom: 38px; }
+    .section-head.center { margin-right: auto; margin-left: auto; text-align: center; }
+    .section-head h2 { margin: 13px 0 0; font-size: 40px; line-height: 1.25; }
+    .section-head p { margin: 16px 0 0; color: var(--sub); font-size: 17px; line-height: 1.75; }
+    .problem-grid, .benefit-grid, .guide-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 20px; }
+    .problem-card, .benefit-card, .guide-card {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      box-shadow: 0 12px 30px rgba(31,27,68,.06);
+    }
+    .card-head {
+      min-height: 86px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 18px 22px;
+      background: linear-gradient(110deg,#f0ebff,#eff8ed);
+    }
+    .card-head .icon {
+      width: 46px;
+      height: 46px;
+      flex: 0 0 46px;
+      display: grid;
+      place-items: center;
+      border-radius: 8px;
+      color: var(--purple);
+      background: #fff;
+      box-shadow: 0 6px 14px rgba(45,35,103,.08);
+    }
+    .card-head i { width: 23px; height: 23px; }
+    .card-head h3 { margin: 0; font-size: 20px; line-height: 1.35; }
+    .card-body { padding: 22px; }
+    .card-body > p { margin: 0; color: var(--sub); font-size: 15px; line-height: 1.7; }
+    .solution {
+      margin-top: 18px;
+      padding-top: 17px;
+      border-top: 1px solid var(--line);
+    }
+    .solution b { display: flex; align-items: center; gap: 7px; color: var(--green-dark); font-size: 13px; }
+    .solution b i { width: 16px; height: 16px; }
+    .solution p { margin: 8px 0 0; color: #333848; font-size: 14px; line-height: 1.65; font-weight: 700; }
+    .channel-band {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      align-items: center;
+      gap: 48px;
+      padding: 46px;
+      border-radius: 12px;
+      color: #fff;
+      background: linear-gradient(125deg,var(--purple-dark),#4c3497 62%,#3f7741);
+      box-shadow: var(--shadow);
+    }
+    .channel-band h2 { margin: 12px 0 14px; font-size: 35px; line-height: 1.3; }
+    .channel-band p { margin: 0; color: rgba(255,255,255,.78); line-height: 1.75; }
+    .channel-list { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 10px; }
+    .channel-list div {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 16px;
+      border: 1px solid rgba(255,255,255,.16);
+      border-radius: 8px;
+      background: rgba(255,255,255,.09);
+      font-weight: 850;
+    }
+    .channel-list i { width: 22px; height: 22px; color: #c8f2b6; }
+    .flow {
+      display: grid;
+      grid-template-columns: repeat(4,minmax(0,1fr));
+      gap: 16px;
+    }
+    .flow-card {
+      min-height: 190px;
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+    }
+    .flow-card b {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 8px;
+      color: var(--purple);
+      background: linear-gradient(135deg,#eee8ff,#eff9eb);
+    }
+    .flow-card h3 { margin: 20px 0 9px; font-size: 19px; }
+    .flow-card p { margin: 0; color: var(--sub); font-size: 14px; line-height: 1.65; }
+    .pack-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+    .pack-main {
+      padding: 36px;
+      border-radius: 10px;
+      color: #fff;
+      background: linear-gradient(140deg,#453181,#6b46b8);
+    }
+    .pack-main .pack-icon {
+      width: 54px;
+      height: 54px;
+      display: grid;
+      place-items: center;
+      border-radius: 8px;
+      color: var(--purple-dark);
+      background: #fff;
+    }
+    .pack-main h3 { margin: 24px 0 13px; font-size: 30px; }
+    .pack-main p { margin: 0; color: rgba(255,255,255,.8); line-height: 1.75; }
+    .pack-list { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 12px; }
+    .pack-list div {
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+    }
+    .pack-list i { width: 22px; height: 22px; color: var(--green); }
+    .pack-list b { display: block; margin-top: 12px; font-size: 16px; }
+    .pack-list span { display: block; margin-top: 7px; color: var(--sub); font-size: 13px; line-height: 1.55; }
+    .benefit-card .card-body { min-height: 150px; }
+    .compare {
+      display: grid;
+      grid-template-columns: 1fr 72px 1fr;
+      align-items: center;
+      gap: 18px;
+    }
+    .compare-card { padding: 34px; border: 1px solid var(--line); border-radius: 10px; background: #fff; }
+    .compare-card.after { border-color: #dcd0fb; box-shadow: var(--shadow); }
+    .compare-card h3 { margin: 0 0 20px; font-size: 24px; }
+    .compare-card ul { display: grid; gap: 13px; margin: 0; padding: 0; list-style: none; }
+    .compare-card li { display: flex; gap: 10px; color: var(--sub); font-size: 15px; line-height: 1.55; }
+    .compare-card li i { width: 18px; height: 18px; flex: 0 0 18px; margin-top: 2px; color: #9296a3; }
+    .compare-card.after li i { color: var(--green); }
+    .compare-arrow {
+      width: 56px;
+      height: 56px;
+      display: grid;
+      place-items: center;
+      justify-self: center;
+      border-radius: 50%;
+      color: #fff;
+      background: var(--purple);
+    }
+    .compare-arrow i { width: 24px; height: 24px; }
+    .guide-card { display: flex; flex-direction: column; transition: transform .2s ease, box-shadow .2s ease; }
+    .guide-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+    .guide-card .card-head { min-height: 78px; }
+    .guide-card .card-head b { color: var(--purple); font-size: 18px; }
+    .guide-card .card-body { flex: 1; display: flex; flex-direction: column; }
+    .guide-card h3 { margin: 0; font-size: 19px; line-height: 1.45; }
+    .guide-card p { margin-top: 12px; }
+    .guide-card span { margin-top: auto; padding-top: 18px; color: var(--purple); font-size: 13px; font-weight: 900; }
+    .faq { max-width: 900px; margin: 0 auto; border-top: 1px solid var(--line); }
+    .faq-item { border-bottom: 1px solid var(--line); }
+    .faq-question {
+      width: 100%;
+      min-height: 74px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 18px 4px;
+      border: 0;
+      background: none;
+      text-align: left;
+      font-weight: 850;
+      cursor: pointer;
+    }
+    .faq-question i { width: 20px; height: 20px; flex: 0 0 20px; transition: transform .2s ease; }
+    .faq-answer { max-height: 0; overflow: hidden; color: var(--sub); line-height: 1.75; transition: max-height .3s ease; }
+    .faq-answer p { margin: 0; padding: 0 42px 24px 4px; }
+    .faq-item.open .faq-answer { max-height: 180px; }
+    .faq-item.open .faq-question i { transform: rotate(45deg); }
+    .final-cta { padding: 72px 0 126px; }
+    .final-box {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+      padding: 46px;
+      border-radius: 12px;
+      color: #fff;
+      background: linear-gradient(125deg,var(--purple-dark),#5a3ca2 68%,#4c8435);
+      box-shadow: var(--shadow);
+    }
+    .final-box h2 { margin: 0; font-size: 34px; }
+    .final-box p { margin: 12px 0 0; color: rgba(255,255,255,.78); line-height: 1.7; }
+    .final-box .btn { flex: 0 0 auto; color: var(--purple-dark); background: #fff; }
+    .footer { padding: 38px 0 112px; border-top: 1px solid var(--line); background: #fafafd; }
+    .footer-inner { display: flex; align-items: flex-start; justify-content: space-between; gap: 24px; }
+    .footer strong { display: block; margin-bottom: 8px; color: var(--purple-dark); }
+    .footer p { margin: 0; color: #777c8b; font-size: 13px; line-height: 1.65; }
+    .footer-links { display: flex; flex-wrap: wrap; gap: 16px; font-size: 13px; font-weight: 850; }
+    .service-network { padding: 58px 0; background: #f7f6fb; }
+    .service-network-head { display: flex; align-items: end; justify-content: space-between; gap: 24px; margin-bottom: 22px; }
+    .service-network h2 { margin: 0; font-size: 30px; }
+    .service-network-head p { max-width: 560px; margin: 0; color: var(--sub); line-height: 1.7; }
+    .service-network-links { display: grid; grid-template-columns: repeat(6,minmax(0,1fr)); gap: 10px; }
+    .service-network-link {
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 10px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: #fff;
+      color: var(--purple-dark);
+      text-align: center;
+      font-size: 14px;
+      font-weight: 900;
+      line-height: 1.4;
+    }
+    .service-network-link:hover { border-color: #bcb2df; transform: translateY(-2px); }
+    .service-network-link[aria-current="page"] { border-color: #7460b5; background: linear-gradient(135deg,#f1ecff,#eef7ec); }
+    .floating {
+      position: fixed;
+      left: 50%;
+      bottom: 18px;
+      z-index: 90;
+      width: min(720px,calc(100% - 32px));
+      transform: translateX(-50%);
+      padding: 10px;
+      border: 1px solid rgba(216,218,229,.94);
+      border-radius: 16px;
+      background: rgba(255,255,255,.94);
+      box-shadow: 0 16px 36px rgba(25,23,55,.18);
+      backdrop-filter: blur(14px);
+    }
+    .floating-inner { display: grid; grid-template-columns: 1.2fr .8fr; gap: 8px; }
+    .float-btn {
+      min-height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 900;
+    }
+    .float-btn i { width: 18px; height: 18px; }
+    .float-btn.apply { color: #fff; background: linear-gradient(135deg,var(--purple-dark),var(--purple)); }
+    .float-btn.call { color: var(--green-dark); background: var(--green-light); }
+    .fade { opacity: 0; transform: translateY(18px); transition: opacity .55s ease, transform .55s ease; }
+    .fade.show { opacity: 1; transform: translateY(0); }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .fade { opacity: 1; transform: none; transition: none; }
+    }
+    @media (max-width: 900px) {
+      .nav { display: none; }
+      .mobile-nav { display: flex; }
+      .service-network-links { grid-template-columns: repeat(3,minmax(0,1fr)); }
+      .hero { min-height: 720px; align-items: flex-end; }
+      .hero::after { background: linear-gradient(180deg,rgba(255,255,255,.1) 0%,rgba(255,255,255,.95) 46%,#fff 70%); }
+      .hero-image { height: 54%; align-self: flex-start; object-position: 65% center; }
+      .hero-inner { padding-top: 330px; padding-bottom: 76px; }
+      .hero-copy { width: 100%; }
+      .trust-grid, .flow { grid-template-columns: repeat(2,minmax(0,1fr)); }
+      .trust-grid div:nth-child(3) { border-left: 0; border-top: 1px solid var(--line); }
+      .trust-grid div:nth-child(4) { border-top: 1px solid var(--line); }
+      .problem-grid, .benefit-grid, .guide-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+      .channel-band, .pack-grid { grid-template-columns: 1fr; }
+      .compare { grid-template-columns: 1fr; }
+      .compare-arrow { transform: rotate(90deg); }
+    }
+    @media (max-width: 640px) {
+      body { padding-bottom: 124px; }
+      .wrap { padding: 0 16px; }
+      .notice { font-size: 11px; line-height: 1.45; }
+      .header-inner { min-height: 62px; gap: 10px; }
+      .brand { gap: 8px; }
+      .brand img { width: 105px; }
+      .brand span { padding-left: 8px; font-size: 12px; }
+      .service-network-head { display: block; }
+      .service-network-head p { margin-top: 10px; }
+      .service-network-links { grid-template-columns: repeat(2,minmax(0,1fr)); }
+      .hero { min-height: 760px; }
+      .hero-image { height: 42%; object-position: 68% center; }
+      .hero-inner { padding-top: 294px; padding-bottom: 62px; }
+      .hero h1 { margin-top: 15px; font-size: 39px; line-height: 1.15; }
+      .hero-copy > p { font-size: 16px; line-height: 1.7; }
+      .hero-points { margin-top: 21px; gap: 7px; }
+      .hero-points span { padding: 8px 10px; font-size: 11px; }
+      .hero-actions .btn { width: 100%; }
+      .trust { margin-top: -22px; }
+      .trust-grid div { padding: 18px 10px; }
+      .trust-grid b { font-size: 16px; }
+      .trust-grid span { font-size: 11px; }
+      .section { padding: 66px 0; }
+      .section-head { margin-bottom: 28px; }
+      .section-head h2 { font-size: 31px; }
+      .section-head p { font-size: 15px; }
+      .problem-grid, .benefit-grid, .guide-grid, .flow { grid-template-columns: 1fr; }
+      .card-head { min-height: 76px; padding: 15px 17px; }
+      .card-head h3 { font-size: 18px; }
+      .card-body { padding: 19px 17px; }
+      .channel-band { padding: 28px 20px; gap: 28px; }
+      .channel-band h2 { font-size: 29px; }
+      .channel-list { grid-template-columns: 1fr; }
+      .flow-card { min-height: 0; }
+      .pack-main { padding: 28px 22px; }
+      .pack-main h3 { font-size: 26px; }
+      .pack-list { grid-template-columns: 1fr 1fr; gap: 8px; }
+      .pack-list div { padding: 16px 13px; }
+      .compare-card { padding: 26px 20px; }
+      .final-cta { padding: 56px 0 82px; }
+      .final-box { align-items: stretch; flex-direction: column; padding: 28px 22px; }
+      .final-box h2 { font-size: 28px; }
+      .footer-inner { flex-direction: column; }
+      .floating { bottom: 0; width: 100%; border-radius: 14px 14px 0 0; }
+      .floating-inner { grid-template-columns: 1fr 1fr; }
+      .float-btn { min-height: 48px; font-size: 13px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="notice">자사몰 · 스마트스토어 · 쿠팡 다채널 쇼핑몰 출고 상담</div>
+  <header class="header">
+    <div class="wrap header-inner">
+      <a class="brand" href="/" aria-label="바인그룹 물류센터 메인">
+        <img src="/baingroup-logo.png" alt="바인그룹" />
+        <span>물류센터</span>
+      </a>
+      <nav class="nav" aria-label="주요 메뉴">
+        <a href="/">3PL 서비스</a>
+        <a href="/#benefits">서비스 분야</a>
+        <a href="#problems">고민 해결</a>
+        <a href="#process">운영 범위</a>
+        <a href="/logistics-guide/">물류 가이드</a>
+        <a href="#faq">FAQ</a>
+        <a class="nav-cta" href="/consultation/?from=shoppingmall-logistics">무료 상담</a>
+      </nav>
+      <div class="mobile-nav">
+        <a href="/#benefits">서비스</a>
+        <a href="/logistics-guide/">가이드</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <img class="hero-image" src="/3pl-hero.png" alt="온라인 쇼핑몰 상품을 보관하고 출고하는 물류센터" />
+      <div class="wrap hero-inner">
+        <div class="hero-copy">
+          <span class="eyebrow"><i data-lucide="shopping-bag"></i> 쇼핑몰 전문 3PL 물류대행</span>
+          <h1>여러 판매 채널의 주문,<br /><strong>출고는 한 곳에서</strong></h1>
+          <p>자사몰·스마트스토어·쿠팡 주문의 입고, 재고관리, 브랜드 포장, 출고와 반품을 바인그룹 물류센터가 함께 운영합니다.</p>
+          <div class="hero-points">
+            <span><i data-lucide="layers-3"></i> 다채널 출고</span>
+            <span><i data-lucide="package-check"></i> 브랜드 포장</span>
+            <span><i data-lucide="badge-dollar-sign"></i> 소량 단가 경쟁력</span>
+          </div>
+          <div class="hero-actions">
+            <a class="btn primary" href="/consultation/?from=shoppingmall-logistics"><i data-lucide="clipboard-check"></i> 무료 물류 진단 신청</a>
+            <a class="btn secondary" href="#problems"><i data-lucide="arrow-down"></i> 운영 방식 확인</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="wrap trust fade">
+      <div class="trust-grid">
+        <div><b>한 곳에서</b><span>입고부터 반품까지 연결</span></div>
+        <div><b>여러 채널</b><span>자사몰·스마트스토어·쿠팡</span></div>
+        <div><b>소량부터</b><span>센터 전체 물량 기반 상담</span></div>
+        <div><b>브랜드답게</b><span>사은품·세트·합포장 협의</span></div>
+      </div>
+    </div>
+
+    <section class="section" id="problems">
+      <div class="wrap">
+        <div class="section-head center">
+          <span class="eyebrow">쇼핑몰 운영 고민</span>
+          <h2>물류에서 생기는 문제,<br />바로 아래에 해결 방법이 있습니다</h2>
+          <p>단순히 박스를 대신 포장하는 데서 끝나지 않고 주문, 재고와 예외 상황이 연결되는 운영 구조를 만듭니다.</p>
+        </div>
+        <div class="problem-grid">
+          <article class="problem-card fade">
+            <div class="card-head"><div class="icon"><i data-lucide="clock-3"></i></div><h3>포장 때문에 핵심업무가 밀림</h3></div>
+            <div class="card-body">
+              <p>대표와 직원이 매일 피킹, 포장과 송장 출력에 시간을 쓰고 있습니다.</p>
+              <div class="solution"><b><i data-lucide="circle-check-big"></i> 바인그룹 솔루션</b><p>반복 출고 업무를 맡아 상품 기획, 판매와 고객 관리에 집중할 시간을 확보합니다.</p></div>
+            </div>
+          </article>
+          <article class="problem-card fade">
+            <div class="card-head"><div class="icon"><i data-lucide="panels-top-left"></i></div><h3>채널별 주문 처리가 복잡함</h3></div>
+            <div class="card-body">
+              <p>자사몰과 스마트스토어, 쿠팡 주문을 각각 확인하다 누락이 생깁니다.</p>
+              <div class="solution"><b><i data-lucide="circle-check-big"></i> 바인그룹 솔루션</b><p>채널별 주문과 출고 기준을 정리해 한 물류 흐름으로 안정적으로 처리합니다.</p></div>
+            </div>
+          </article>
+          <article class="problem-card fade">
+            <div class="card-head"><div class="icon"><i data-lucide="badge-alert"></i></div><h3>재고 차이와 오배송이 반복됨</h3></div>
+            <div class="card-body">
+              <p>판매 가능 수량이 맞지 않거나 옵션·사은품 누락으로 재배송이 늘어납니다.</p>
+              <div class="solution"><b><i data-lucide="circle-check-big"></i> 바인그룹 솔루션</b><p>입출고와 반품 재고를 구분하고 피킹·포장 검수 기준으로 오류를 줄입니다.</p></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section soft">
+      <div class="wrap">
+        <div class="channel-band fade">
+          <div>
+            <span class="eyebrow" style="color:#c8f2b6">다채널 쇼핑몰 출고</span>
+            <h2>판매 채널은 여러 개여도<br />재고와 출고는 하나의 흐름으로</h2>
+            <p>채널별 상품 코드, 주문 마감과 배송 정책을 확인해 브랜드에 맞는 운영 범위를 정합니다.</p>
+          </div>
+          <div class="channel-list">
+            <div><i data-lucide="store"></i> 자사몰 주문</div>
+            <div><i data-lucide="shopping-cart"></i> 스마트스토어</div>
+            <div><i data-lucide="package-open"></i> 쿠팡 판매</div>
+            <div><i data-lucide="boxes"></i> 공동 재고관리</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="process">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="eyebrow">서비스 범위</span>
+          <h2>입고부터 반품까지 이어지는 쇼핑몰 물류</h2>
+          <p>판매와 고객 경험에 필요한 기준은 브랜드와 협의하고, 반복되는 현장 업무는 물류센터가 수행합니다.</p>
+        </div>
+        <div class="flow">
+          <article class="flow-card fade"><b>01</b><h3>상품 입고</h3><p>입고 상품의 수량과 외관 상태를 확인합니다.</p></article>
+          <article class="flow-card fade"><b>02</b><h3>보관·재고관리</h3><p>SKU와 출고 빈도에 맞춰 보관하고 수량을 관리합니다.</p></article>
+          <article class="flow-card fade"><b>03</b><h3>주문 확인</h3><p>채널별 주문과 취소, 주소와 재고 상태를 확인합니다.</p></article>
+          <article class="flow-card fade"><b>04</b><h3>피킹·검수</h3><p>상품, 옵션과 수량을 주문 내용과 대조합니다.</p></article>
+          <article class="flow-card fade"><b>05</b><h3>브랜드 포장</h3><p>협의한 자재와 사은품, 합포장 기준을 적용합니다.</p></article>
+          <article class="flow-card fade"><b>06</b><h3>송장·출고</h3><p>택배 송장을 처리하고 출고 상태를 반영합니다.</p></article>
+          <article class="flow-card fade"><b>07</b><h3>배송 연계</h3><p>택배사 인계와 배송 흐름을 연결해 관리합니다.</p></article>
+          <article class="flow-card fade"><b>08</b><h3>반품·교환</h3><p>회수 상품을 검수하고 정상·불량 재고로 구분합니다.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section soft">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="eyebrow">브랜드 경험 유지</span>
+          <h2>물류를 맡겨도 포장은 브랜드답게</h2>
+          <p>작업 기준과 적용 조건을 명확히 정하면 브랜드 박스, 사은품과 세트 구성도 일관되게 운영할 수 있습니다.</p>
+        </div>
+        <div class="pack-grid">
+          <div class="pack-main fade">
+            <div class="pack-icon"><i data-lucide="package-check"></i></div>
+            <h3>작업 기준이 곧<br />브랜드 품질입니다</h3>
+            <p>완성 사진, 자재 목록, 포장 순서와 예외 기준을 함께 정리해 담당자가 달라도 같은 결과를 만들 수 있도록 운영합니다.</p>
+          </div>
+          <div class="pack-list">
+            <div class="fade"><i data-lucide="box"></i><b>브랜드 박스</b><span>지정 자재와 완충재 사용</span></div>
+            <div class="fade"><i data-lucide="gift"></i><b>사은품 동봉</b><span>상품·금액·기간별 적용</span></div>
+            <div class="fade"><i data-lucide="layers"></i><b>세트 구성</b><span>여러 상품의 세트 작업</span></div>
+            <div class="fade"><i data-lucide="combine"></i><b>합포장</b><span>주문 조건별 묶음 출고</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="section-head center">
+          <span class="eyebrow">운영 효과</span>
+          <h2>쇼핑몰이 성장할수록<br />물류 구조는 더 단순해야 합니다</h2>
+        </div>
+        <div class="benefit-grid">
+          <article class="benefit-card fade">
+            <div class="card-head"><div class="icon"><i data-lucide="trending-down"></i></div><h3>전체 물류비 점검</h3></div>
+            <div class="card-body"><p>택배비뿐 아니라 인건비, 자재, 공간과 오류 처리 비용까지 같은 기준으로 비교합니다.</p></div>
+          </article>
+          <article class="benefit-card fade">
+            <div class="card-head"><div class="icon"><i data-lucide="scan-barcode"></i></div><h3>재고 정확도 향상</h3></div>
+            <div class="card-body"><p>입고, 출고, 보류와 반품 재고를 구분해 품절 판매와 수량 차이를 줄입니다.</p></div>
+          </article>
+          <article class="benefit-card fade">
+            <div class="card-head"><div class="icon"><i data-lucide="zap"></i></div><h3>빠른 주문 처리</h3></div>
+            <div class="card-body"><p>정해진 마감과 작업 기준으로 주문 확인부터 송장·출고까지 반복 업무를 처리합니다.</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section soft">
+      <div class="wrap">
+        <div class="section-head center">
+          <span class="eyebrow">전환 전후</span>
+          <h2>직접 출고의 부담을<br />예측 가능한 운영으로</h2>
+        </div>
+        <div class="compare">
+          <div class="compare-card fade">
+            <h3>직접 출고할 때</h3>
+            <ul>
+              <li><i data-lucide="circle-x"></i> 채널마다 주문과 송장을 따로 처리</li>
+              <li><i data-lucide="circle-x"></i> 대표와 직원이 포장에 계속 투입</li>
+              <li><i data-lucide="circle-x"></i> 행사 주문 증가 때 출고가 지연</li>
+              <li><i data-lucide="circle-x"></i> 반품 상품과 정상 재고가 뒤섞임</li>
+            </ul>
+          </div>
+          <div class="compare-arrow"><i data-lucide="arrow-right"></i></div>
+          <div class="compare-card after fade">
+            <h3>물류대행을 맡기면</h3>
+            <ul>
+              <li><i data-lucide="circle-check-big"></i> 여러 채널 주문을 한 물류 흐름으로</li>
+              <li><i data-lucide="circle-check-big"></i> 판매와 브랜드 운영에 핵심 인력 집중</li>
+              <li><i data-lucide="circle-check-big"></i> 기준화된 피킹·포장·출고 프로세스</li>
+              <li><i data-lucide="circle-check-big"></i> 입출고와 반품 재고를 구분해 관리</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="guides">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="eyebrow">쇼핑몰 물류 가이드</span>
+          <h2>맡기기 전에 운영 기준부터 확인하세요</h2>
+          <p>상담 전에 읽어두면 현재 문제와 필요한 업무 범위를 더 정확하게 설명할 수 있습니다.</p>
+        </div>
+        <div class="guide-grid">
+          <a class="guide-card fade" href="/logistics-guide/shoppingmall-outsourcing-timing/">
+            <div class="card-head"><b>01</b><h3>물류대행 전환 시점</h3></div>
+            <div class="card-body"><p>주문량, 작업 시간과 공간을 기준으로 직접 출고를 언제 맡겨야 하는지 확인합니다.</p><span>가이드 읽기 →</span></div>
+          </a>
+          <a class="guide-card fade" href="/logistics-guide/multichannel-order-management/">
+            <div class="card-head"><b>02</b><h3>다채널 주문 통합 출고</h3></div>
+            <div class="card-body"><p>자사몰·스마트스토어·쿠팡 주문과 재고를 함께 운영하는 기준을 정리했습니다.</p><span>가이드 읽기 →</span></div>
+          </a>
+          <a class="guide-card fade" href="/logistics-guide/brand-packaging-fulfillment/">
+            <div class="card-head"><b>03</b><h3>브랜드 포장과 사은품</h3></div>
+            <div class="card-body"><p>브랜드 박스, 세트 구성, 합포장과 사은품 작업 기준을 살펴봅니다.</p><span>가이드 읽기 →</span></div>
+          </a>
+          <a class="guide-card fade" href="/logistics-guide/shoppingmall-inventory-errors/">
+            <div class="card-head"><b>04</b><h3>재고·오배송 관리</h3></div>
+            <div class="card-body"><p>재고 차이, 품절 판매와 오배송을 줄이는 검수 흐름을 확인합니다.</p><span>가이드 읽기 →</span></div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section soft" id="faq">
+      <div class="wrap">
+        <div class="section-head center">
+          <span class="eyebrow">FAQ</span>
+          <h2>자주 묻는 질문</h2>
+        </div>
+        <div class="faq">
+          <div class="faq-item open">
+            <button class="faq-question" type="button">자사몰과 스마트스토어 주문을 함께 출고할 수 있나요?<i data-lucide="plus"></i></button>
+            <div class="faq-answer"><p>판매 채널별 주문 전달 방식과 출고 기준을 확인한 뒤 한 센터에서 입고, 재고관리, 포장과 출고를 운영할 수 있습니다.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" type="button">출고량이 적은 쇼핑몰도 물류대행을 맡길 수 있나요?<i data-lucide="plus"></i></button>
+            <div class="faq-answer"><p>가능합니다. 상품 규격, 재고량, 포장 방식과 월 출고량을 확인해 소량 브랜드에 맞는 운영 조건을 상담합니다.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" type="button">브랜드 박스나 사은품 포장도 가능한가요?<i data-lucide="plus"></i></button>
+            <div class="faq-answer"><p>포장 자재와 적용 주문, 작업 순서를 사전에 정하면 브랜드 박스, 안내물, 사은품과 세트 구성의 가능 범위를 협의할 수 있습니다.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" type="button">쿠팡 주문이나 입고 업무도 함께 상담할 수 있나요?<i data-lucide="plus"></i></button>
+            <div class="faq-answer"><p>일반 소비자 주문 출고와 쿠팡 밀크런, 로켓그로스 입고 준비 등 필요한 물류 흐름을 구분해 상담할 수 있습니다.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="service-network fade" aria-labelledby="service-network-title">
+      <div class="wrap">
+        <div class="service-network-head">
+          <h2 id="service-network-title">필요한 물류 서비스도 함께 확인하세요</h2>
+          <p>판매 채널, 출고량, 상품 크기와 운영 과제에 맞는 서비스 페이지로 바로 이동할 수 있습니다.</p>
+        </div>
+        <nav class="service-network-links" aria-label="물류 서비스 분야">
+          <a class="service-network-link" aria-current="page" href="/shoppingmall-logistics/">쇼핑몰 물류</a>
+          <a class="service-network-link" href="/coupang-logistics/">쿠팡 물류</a>
+          <a class="service-network-link" href="/inventory-return-logistics/">재고·반품</a>
+          <a class="service-network-link" href="/small-volume-logistics/">소량 물류</a>
+          <a class="service-network-link" href="/large-cargo-logistics/">대형화물</a>
+          <a class="service-network-link" href="/logistics-quote/">물류 견적</a>
+        </nav>
+      </div>
+    </section>
+
+    <section class="final-cta">
+      <div class="wrap">
+        <div class="final-box fade">
+          <div>
+            <h2>쇼핑몰 운영에만 집중하세요.<br />반복되는 출고는 맡겨주세요.</h2>
+            <p>판매 채널, 월 출고량과 상품 정보를 알려주시면 필요한 물류 범위를 함께 확인합니다.</p>
+          </div>
+          <a class="btn" href="/consultation/?from=shoppingmall-logistics"><i data-lucide="clipboard-check"></i> 무료 상담 신청</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <div>
+        <strong>바인그룹 물류센터</strong>
+        <p>자사몰·스마트스토어·쿠팡 판매자의 입고, 재고관리, 포장, 출고와 반품을 지원합니다.</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">3PL 서비스</a>
+        <a href="/logistics-guide/">물류 가이드</a>
+        <a href="/consultation/?from=shoppingmall-logistics">상담 신청</a>
+        <a href="tel:01062565593">전화 상담</a>
+      </div>
+    </div>
+  </footer>
+
+  <nav class="floating" aria-label="고정 상담 버튼">
+    <div class="floating-inner">
+      <a class="float-btn apply" href="/consultation/?from=shoppingmall-logistics"><i data-lucide="clipboard-check"></i> 무료 물류 상담</a>
+      <a class="float-btn call" href="tel:01062565593"><i data-lucide="phone"></i> 전화 상담</a>
+    </div>
+  </nav>
+
+  <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+  <script>
+    if (window.lucide) {
+      window.lucide.createIcons();
+    }
+
+    document.querySelectorAll('.faq-question').forEach(function(button) {
+      button.setAttribute('aria-expanded', String(button.closest('.faq-item').classList.contains('open')));
+      button.addEventListener('click', function() {
+        var item = button.closest('.faq-item');
+        item.classList.toggle('open');
+        button.setAttribute('aria-expanded', String(item.classList.contains('open')));
+      });
+    });
+
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08 });
+
+    document.querySelectorAll('.fade').forEach(function(element) {
+      observer.observe(element);
+    });
+  </script>
+</body>
+</html>

@@ -1,143 +1,213 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://lds1202.github.io/landingpage_001/</loc>
-    <lastmod>2026-07-27</lastmod>
+    <loc>https://3pl.33pl.co.kr/</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://lds1202.github.io/landingpage_001/logistics-guide.html</loc>
-    <lastmod>2026-07-27</lastmod>
+    <loc>https://3pl.33pl.co.kr/shoppingmall-logistics/</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lds1202.github.io/landingpage_001/guide-3pl-basics.html</loc>
-    <lastmod>2026-07-27</lastmod>
+    <loc>https://3pl.33pl.co.kr/coupang-logistics/</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lds1202.github.io/landingpage_001/guide-self-shipping-vs-3pl.html</loc>
-    <lastmod>2026-07-27</lastmod>
+    <loc>https://3pl.33pl.co.kr/inventory-return-logistics/</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lds1202.github.io/landingpage_001/guide-3pl-cost-saving.html</loc>
-    <lastmod>2026-07-27</lastmod>
+    <loc>https://3pl.33pl.co.kr/small-volume-logistics/</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lds1202.github.io/landingpage_001/shoppingmall-logistics.html</loc>
-    <lastmod>2026-07-27</lastmod>
+    <loc>https://3pl.33pl.co.kr/large-cargo-logistics/</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lds1202.github.io/landingpage_001/guide-shoppingmall-outsourcing-timing.html</loc>
-    <lastmod>2026-07-27</lastmod>
+    <loc>https://3pl.33pl.co.kr/logistics-quote/</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lds1202.github.io/landingpage_001/guide-multichannel-order-management.html</loc>
-    <lastmod>2026-07-27</lastmod>
+    <loc>https://3pl.33pl.co.kr/logistics-guide/</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://lds1202.github.io/landingpage_001/guide-brand-packaging-fulfillment.html</loc>
-    <lastmod>2026-07-27</lastmod>
+    <loc>https://3pl.33pl.co.kr/logistics-guide/3pl-basics/</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lds1202.github.io/landingpage_001/guide-shoppingmall-inventory-errors.html</loc>
-    <lastmod>2026-07-27</lastmod>
+    <loc>https://3pl.33pl.co.kr/logistics-guide/3pl-cost-saving/</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lds1202.github.io/landingpage_001/coupang-logistics.html</loc>
-    <lastmod>2026-07-27</lastmod>
+    <loc>https://3pl.33pl.co.kr/logistics-guide/3pl-quote-comparison/</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lds1202.github.io/landingpage_001/guide-coupang-milkrun-preparation.html</loc>
-    <lastmod>2026-07-27</lastmod>
+    <loc>https://3pl.33pl.co.kr/logistics-guide/3pl-quote-preparation/</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lds1202.github.io/landingpage_001/guide-rocket-growth-inbound-checklist.html</loc>
-    <lastmod>2026-07-27</lastmod>
+    <loc>https://3pl.33pl.co.kr/logistics-guide/brand-packaging-fulfillment/</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lds1202.github.io/landingpage_001/guide-coupang-shared-inventory.html</loc>
-    <lastmod>2026-07-27</lastmod>
+    <loc>https://3pl.33pl.co.kr/logistics-guide/coupang-milkrun-preparation/</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lds1202.github.io/landingpage_001/guide-coupang-returns-management.html</loc>
-    <lastmod>2026-07-27</lastmod>
+    <loc>https://3pl.33pl.co.kr/logistics-guide/coupang-returns-management/</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lds1202.github.io/landingpage_001/inventory-return-logistics.html</loc>
-    <lastmod>2026-07-27</lastmod>
+    <loc>https://3pl.33pl.co.kr/logistics-guide/coupang-shared-inventory/</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lds1202.github.io/landingpage_001/guide-inventory-discrepancy-prevention.html</loc>
-    <lastmod>2026-07-27</lastmod>
+    <loc>https://3pl.33pl.co.kr/logistics-guide/inventory-discrepancy-prevention/</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lds1202.github.io/landingpage_001/guide-return-stock-classification.html</loc>
-    <lastmod>2026-07-27</lastmod>
+    <loc>https://3pl.33pl.co.kr/logistics-guide/inventory-turnover-management/</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lds1202.github.io/landingpage_001/guide-inventory-turnover-management.html</loc>
-    <lastmod>2026-07-27</lastmod>
+    <loc>https://3pl.33pl.co.kr/logistics-guide/large-cargo-3pl-selection/</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lds1202.github.io/landingpage_001/guide-peak-season-inventory-operations.html</loc>
-    <lastmod>2026-07-27</lastmod>
+    <loc>https://3pl.33pl.co.kr/logistics-guide/large-cargo-inbound-storage/</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lds1202.github.io/landingpage_001/small-volume-logistics.html</loc>
-    <lastmod>2026-07-27</lastmod>
+    <loc>https://3pl.33pl.co.kr/logistics-guide/large-cargo-packaging-damage/</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lds1202.github.io/landingpage_001/guide-small-volume-3pl-selection.html</loc>
-    <lastmod>2026-07-27</lastmod>
+    <loc>https://3pl.33pl.co.kr/logistics-guide/large-cargo-shipping-cost/</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lds1202.github.io/landingpage_001/guide-small-volume-logistics-cost.html</loc>
-    <lastmod>2026-07-27</lastmod>
+    <loc>https://3pl.33pl.co.kr/logistics-guide/logistics-hidden-costs/</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lds1202.github.io/landingpage_001/guide-startup-brand-3pl-timing.html</loc>
-    <lastmod>2026-07-27</lastmod>
+    <loc>https://3pl.33pl.co.kr/logistics-guide/multichannel-order-management/</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lds1202.github.io/landingpage_001/guide-small-volume-brand-packaging.html</loc>
-    <lastmod>2026-07-27</lastmod>
+    <loc>https://3pl.33pl.co.kr/logistics-guide/peak-season-inventory-operations/</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lds1202.github.io/landingpage_001/large-cargo-logistics.html</loc>
-    <lastmod>2026-07-27</lastmod>
+    <loc>https://3pl.33pl.co.kr/logistics-guide/return-stock-classification/</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lds1202.github.io/landingpage_001/guide-large-cargo-3pl-selection.html</loc>
-    <lastmod>2026-07-27</lastmod>
+    <loc>https://3pl.33pl.co.kr/logistics-guide/rocket-growth-inbound-checklist/</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lds1202.github.io/landingpage_001/guide-large-cargo-inbound-storage.html</loc>
-    <lastmod>2026-07-27</lastmod>
+    <loc>https://3pl.33pl.co.kr/logistics-guide/self-shipping-total-cost/</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lds1202.github.io/landingpage_001/guide-large-cargo-shipping-cost.html</loc>
-    <lastmod>2026-07-27</lastmod>
+    <loc>https://3pl.33pl.co.kr/logistics-guide/self-shipping-vs-3pl/</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lds1202.github.io/landingpage_001/guide-large-cargo-packaging-damage.html</loc>
-    <lastmod>2026-07-27</lastmod>
+    <loc>https://3pl.33pl.co.kr/logistics-guide/shoppingmall-inventory-errors/</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lds1202.github.io/landingpage_001/3pl-logistics-quote.html</loc>
-    <lastmod>2026-07-27</lastmod>
+    <loc>https://3pl.33pl.co.kr/logistics-guide/shoppingmall-outsourcing-timing/</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lds1202.github.io/landingpage_001/guide-3pl-quote-comparison.html</loc>
-    <lastmod>2026-07-27</lastmod>
+    <loc>https://3pl.33pl.co.kr/logistics-guide/small-volume-3pl-selection/</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lds1202.github.io/landingpage_001/guide-logistics-hidden-costs.html</loc>
-    <lastmod>2026-07-27</lastmod>
+    <loc>https://3pl.33pl.co.kr/logistics-guide/small-volume-brand-packaging/</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lds1202.github.io/landingpage_001/guide-self-shipping-total-cost.html</loc>
-    <lastmod>2026-07-27</lastmod>
+    <loc>https://3pl.33pl.co.kr/logistics-guide/small-volume-logistics-cost/</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lds1202.github.io/landingpage_001/guide-3pl-quote-preparation.html</loc>
-    <lastmod>2026-07-27</lastmod>
+    <loc>https://3pl.33pl.co.kr/logistics-guide/startup-brand-3pl-timing/</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 </urlset>
