@@ -80,6 +80,11 @@ for (const [legacyFile, publicPath] of fixedRoutes) {
   const hrefs = [...source.matchAll(/<a\b[^>]*\shref="([^"]+)"/gi)].map(
     (item) => item[1],
   );
+  const warehouseImages = [
+    ...source.matchAll(
+      /<img\b[^>]*\bsrc="(\/warehouse-[a-z0-9-]+\.webp)"[^>]*>/gi,
+    ),
+  ].map((item) => item[1]);
 
   pages.set(publicPath, {
     legacyFile,
@@ -93,6 +98,7 @@ for (const [legacyFile, publicPath] of fixedRoutes) {
     indexable,
     ids,
     hrefs,
+    warehouseImages: [...new Set(warehouseImages)],
   });
 
   if (!title) errors.push(`${publicPath}: title is missing`);
@@ -111,6 +117,25 @@ for (const [legacyFile, publicPath] of fixedRoutes) {
   }
   if (!source.includes('src="/analytics.js"')) {
     errors.push(`${publicPath}: analytics script is missing`);
+  }
+  if (indexable && warehouseImages.length) {
+    const expectedImage = `${baseUrl}${warehouseImages[0]}`;
+    const ogImage = match(
+      source,
+      /<meta\s+property="og:image"\s+content="([^"]*)"/i,
+    );
+    const twitterImage = match(
+      source,
+      /<meta\s+name="twitter:image"\s+content="([^"]*)"/i,
+    );
+    if (ogImage !== expectedImage) {
+      errors.push(`${publicPath}: og:image must use the first warehouse image`);
+    }
+    if (twitterImage !== expectedImage) {
+      errors.push(
+        `${publicPath}: twitter:image must use the first warehouse image`,
+      );
+    }
   }
   if (
     source.includes("lds1202.github.io/landingpage_001") ||
@@ -260,6 +285,54 @@ const robots = fs.readFileSync(path.join(root, "robots.txt"), "utf8");
 if (!robots.includes(`Sitemap: ${baseUrl}/sitemap.xml`)) {
   errors.push("robots.txt has the wrong sitemap URL");
 }
+if (!robots.includes(`Sitemap: ${baseUrl}/image-sitemap.xml`)) {
+  errors.push("robots.txt is missing the image sitemap URL");
+}
+
+const imageSitemap = fs.readFileSync(
+  path.join(root, "image-sitemap.xml"),
+  "utf8",
+);
+if (
+  !imageSitemap.includes(
+    'xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"',
+  )
+) {
+  errors.push("image-sitemap.xml is missing the image namespace");
+}
+
+const imageSitemapEntries = new Map();
+for (const block of imageSitemap.matchAll(/<url>([\s\S]*?)<\/url>/g)) {
+  const loc = match(block[1], /<loc>([^<]+)<\/loc>/);
+  const images = [
+    ...block[1].matchAll(/<image:loc>([^<]+)<\/image:loc>/g),
+  ].map((item) => item[1]);
+  imageSitemapEntries.set(loc, images);
+
+  for (const imageUrl of images) {
+    if (!imageUrl.startsWith(`${baseUrl}/warehouse-`)) {
+      errors.push(`image-sitemap.xml has an unexpected image URL: ${imageUrl}`);
+      continue;
+    }
+    const imageFile = path.join(root, new URL(imageUrl).pathname.slice(1));
+    if (!fs.existsSync(imageFile)) {
+      errors.push(`image-sitemap.xml references a missing file: ${imageUrl}`);
+    }
+  }
+}
+
+for (const page of pages.values()) {
+  if (!page.indexable || !page.warehouseImages.length) continue;
+  const expectedImages = page.warehouseImages.map((src) => `${baseUrl}${src}`);
+  const sitemapImages = imageSitemapEntries.get(page.canonical) || [];
+  if (
+    JSON.stringify(sitemapImages) !== JSON.stringify(expectedImages)
+  ) {
+    errors.push(
+      `${page.publicPath}: image sitemap does not match page warehouse images`,
+    );
+  }
+}
 
 if (errors.length) {
   console.error(`Site audit failed: ${errors.length} issue(s)`);
@@ -271,5 +344,5 @@ console.log(
   `Site audit passed: ${pages.size} clean-path pages, ${expectedSitemapUrls.length} indexable pages.`,
 );
 console.log(
-  "Canonical URLs, internal links, JSON-LD, sitemap, form sources, phone and address exposure are valid.",
+  "Canonical URLs, internal links, JSON-LD, page images, sitemaps, form sources, phone and address exposure are valid.",
 );

@@ -7,7 +7,7 @@ const legacyBaseUrls = [
   "https://lds1202.github.io/landingpage_001",
   "https://educo-logi.github.io/3pllandingpage",
 ];
-const lastmod = "2026-07-28";
+const lastmod = "2026-07-29";
 
 const fixedRoutes = new Map([
   ["index.html", "/"],
@@ -45,6 +45,62 @@ function setMetaContent(source, name, content) {
   const tag = `<meta name="${name}" content="${content}" />`;
   if (pattern.test(source)) return source.replace(pattern, tag);
   return source.replace("</title>", `</title>\n  ${tag}`);
+}
+
+function setPropertyContent(source, property, content) {
+  const pattern = new RegExp(
+    `<meta\\s+property="${property}"\\s+content="[^"]*"\\s*\\/?>`,
+    "i",
+  );
+  const tag = `<meta property="${property}" content="${content}" />`;
+  if (pattern.test(source)) return source.replace(pattern, tag);
+  return source.replace("</title>", `</title>\n  ${tag}`);
+}
+
+function attribute(tag, name) {
+  return tag.match(new RegExp(`\\b${name}="([^"]*)"`, "i"))?.[1] || "";
+}
+
+function warehouseImages(source) {
+  const images = [];
+  const seen = new Set();
+
+  for (const match of source.matchAll(/<img\b[^>]*>/gi)) {
+    const tag = match[0];
+    const src = attribute(tag, "src");
+    if (!/^\/warehouse-[a-z0-9-]+\.webp$/i.test(src) || seen.has(src)) {
+      continue;
+    }
+    seen.add(src);
+    images.push({
+      src,
+      alt: attribute(tag, "alt"),
+      width: attribute(tag, "width"),
+      height: attribute(tag, "height"),
+    });
+  }
+
+  return images;
+}
+
+function setPrimaryImageMetadata(source) {
+  const primary = warehouseImages(source)[0];
+  if (!primary) return source;
+
+  const imageUrl = `${baseUrl}${primary.src}`;
+  let result = setPropertyContent(source, "og:image", imageUrl);
+  result = setPropertyContent(
+    result,
+    "og:image:alt",
+    primary.alt || "바인그룹 3PL 물류센터 현장",
+  );
+  if (primary.width) {
+    result = setPropertyContent(result, "og:image:width", primary.width);
+  }
+  if (primary.height) {
+    result = setPropertyContent(result, "og:image:height", primary.height);
+  }
+  return setMetaContent(result, "twitter:image", imageUrl);
 }
 
 function setIndexing(source, indexable) {
@@ -100,7 +156,7 @@ function normalizeUrls(source, file) {
     `<meta property="og:url" content="${canonical}" />`,
   );
 
-  return ensureAnalytics(result);
+  return ensureAnalytics(setPrimaryImageMetadata(result));
 }
 
 function outputFileFor(publicPath) {
@@ -160,18 +216,50 @@ ${sitemapRoutes
 </urlset>
 `;
 
+const imageSitemap = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+${sitemapRoutes
+  .map(({ loc }) => {
+    const publicPath = new URL(loc).pathname;
+    const source = fs.readFileSync(outputFileFor(publicPath), "utf8");
+    const images = warehouseImages(source);
+    if (!images.length) return "";
+
+    return `  <url>
+    <loc>${loc}</loc>
+${images
+  .map(
+    ({ src }) => `    <image:image>
+      <image:loc>${baseUrl}${src}</image:loc>
+    </image:image>`,
+  )
+  .join("\n")}
+  </url>`;
+  })
+  .filter(Boolean)
+  .join("\n")}
+</urlset>
+`;
+
 fs.writeFileSync(path.join(root, "sitemap.xml"), sitemap, "utf8");
+fs.writeFileSync(
+  path.join(root, "image-sitemap.xml"),
+  imageSitemap,
+  "utf8",
+);
 fs.writeFileSync(
   path.join(root, "robots.txt"),
   `User-agent: *
 Allow: /
 
 Sitemap: ${baseUrl}/sitemap.xml
+Sitemap: ${baseUrl}/image-sitemap.xml
 `,
   "utf8",
 );
 fs.writeFileSync(path.join(root, ".nojekyll"), "", "utf8");
 
 console.log(
-  `Built ${routes.size - 1} clean-path pages for ${baseUrl} and refreshed sitemap.xml.`,
+  `Built ${routes.size - 1} clean-path pages for ${baseUrl} and refreshed both sitemaps.`,
 );
