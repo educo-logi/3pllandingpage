@@ -524,6 +524,52 @@
       margin-top: 24px;
     }
 
+    .operations-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .operation-photo {
+      margin: 0;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fff;
+      box-shadow: 0 12px 30px rgba(22, 20, 45, 0.06);
+    }
+
+    .operation-photo img {
+      width: 100%;
+      height: 270px;
+      display: block;
+      object-fit: cover;
+    }
+
+    .operation-photo figcaption {
+      min-height: 112px;
+      padding: 20px 22px 22px;
+      border-top: 1px solid #e8e5f0;
+      background: linear-gradient(135deg, #f2edff 0%, #edf8f2 100%);
+    }
+
+    .operation-photo strong {
+      display: block;
+      color: var(--ink);
+      font-size: 19px;
+      line-height: 1.35;
+      font-weight: 950;
+    }
+
+    .operation-photo span {
+      display: block;
+      margin-top: 7px;
+      color: #5f6472;
+      font-size: 14px;
+      line-height: 1.65;
+      font-weight: 700;
+    }
+
     .problem-card,
     .benefit-card,
     .target-card,
@@ -1108,8 +1154,21 @@
       .problem-grid,
       .benefit-grid,
       .target-grid,
-      .guide-preview-grid {
+      .guide-preview-grid,
+      .operations-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .operation-photo:first-child {
+        grid-column: 1 / -1;
+      }
+
+      .operation-photo:first-child img {
+        height: 400px;
+      }
+
+      .operation-photo:not(:first-child) img {
+        height: 300px;
       }
 
       .flow {
@@ -1202,8 +1261,24 @@
       .benefit-grid,
       .target-grid,
       .guide-preview-grid,
+      .operations-grid,
       .flow {
         grid-template-columns: 1fr;
+      }
+
+      .operation-photo:first-child {
+        grid-column: auto;
+      }
+
+      .operation-photo img,
+      .operation-photo:first-child img,
+      .operation-photo:not(:first-child) img {
+        height: min(72vw, 310px);
+      }
+
+      .operation-photo figcaption {
+        min-height: auto;
+        padding: 18px;
       }
 
       .problem-card,
@@ -1510,7 +1585,40 @@
       </div>
     </section>
 
-    <section class="section soft fade">
+    <section class="section soft fade" aria-labelledby="operations-title">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="section-kicker">실제 운영 현장</span>
+          <h2 id="operations-title">보관 방식까지 직접 확인하세요</h2>
+          <p>랙 보관부터 대량 재고와 다품종 상품 관리까지, 실제 물류센터 운영 환경을 바탕으로 상담합니다.</p>
+        </div>
+        <div class="operations-grid">
+          <figure class="operation-photo">
+            <img src="/warehouse-aisle.webp" width="1440" height="960" loading="lazy" decoding="async" alt="바인그룹 물류센터의 랙 보관 통로와 박스 재고" />
+            <figcaption>
+              <strong>랙 기반 재고 보관</strong>
+              <span>상품별 위치를 구분해 입고·보관·출고 흐름을 관리합니다.</span>
+            </figcaption>
+          </figure>
+          <figure class="operation-photo">
+            <img src="/warehouse-bulk-storage.webp" width="1440" height="958" loading="lazy" decoding="async" alt="물류센터 대형 랙에 보관된 대량 상품 재고" />
+            <figcaption>
+              <strong>대량·부피 재고 대응</strong>
+              <span>랙과 팔레트를 활용해 물량과 상품 특성에 맞춰 보관합니다.</span>
+            </figcaption>
+          </figure>
+          <figure class="operation-photo">
+            <img src="/warehouse-multisku.webp" width="1440" height="648" loading="lazy" decoding="async" alt="여러 종류의 상품을 구분해 보관하는 다품종 재고 관리 현장" />
+            <figcaption>
+              <strong>다품종 SKU 구분 관리</strong>
+              <span>상품 종류가 많아도 구분 보관해 주문별 출고 오류를 줄입니다.</span>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section white fade">
       <div class="wrap">
         <div class="price-box">
           <div class="price-main">
