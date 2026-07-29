@@ -570,6 +570,71 @@
       font-weight: 700;
     }
 
+    .field-photo-section {
+      padding: 28px 0 80px;
+      background: #fff;
+    }
+
+    .field-photo-section.soft-photo {
+      background: #f7f8fc;
+    }
+
+    .field-photo-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+
+    .field-photo-grid.two {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .field-photo {
+      margin: 0;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fff;
+      box-shadow: 0 16px 38px rgba(22, 20, 45, 0.08);
+    }
+
+    .field-photo img {
+      width: 100%;
+      height: clamp(330px, 34vw, 480px);
+      display: block;
+      object-fit: cover;
+    }
+
+    .field-photo-grid.two .field-photo img {
+      height: 340px;
+    }
+
+    .field-photo figcaption {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 17px 22px;
+      border-top: 1px solid #e8e5f0;
+      background: linear-gradient(135deg, #f2edff 0%, #edf8f2 100%);
+    }
+
+    .field-photo strong {
+      color: var(--ink);
+      font-size: 18px;
+      line-height: 1.4;
+      font-weight: 950;
+      white-space: nowrap;
+    }
+
+    .field-photo span {
+      color: #5f6472;
+      font-size: 14px;
+      line-height: 1.6;
+      font-weight: 700;
+      text-align: right;
+    }
+
     .problem-card,
     .benefit-card,
     .target-card,
@@ -1159,6 +1224,14 @@
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
+      .field-photo-grid.two {
+        grid-template-columns: 1fr;
+      }
+
+      .field-photo-grid.two .field-photo img {
+        height: 420px;
+      }
+
       .operation-photo:first-child {
         grid-column: 1 / -1;
       }
@@ -1279,6 +1352,30 @@
       .operation-photo figcaption {
         min-height: auto;
         padding: 18px;
+      }
+
+      .field-photo-section {
+        padding: 18px 0 64px;
+      }
+
+      .field-photo img,
+      .field-photo-grid.two .field-photo img {
+        height: min(70vw, 290px);
+      }
+
+      .field-photo figcaption {
+        display: block;
+        padding: 16px 18px 18px;
+      }
+
+      .field-photo strong {
+        white-space: normal;
+      }
+
+      .field-photo span {
+        display: block;
+        margin-top: 5px;
+        text-align: left;
       }
 
       .problem-card,
@@ -1506,6 +1603,20 @@
       </div>
     </section>
 
+    <section class="field-photo-section fade" id="warehouse-photo-rack" aria-label="물류센터 랙 보관 현장">
+      <div class="wrap">
+        <div class="field-photo-grid">
+          <figure class="field-photo">
+            <img src="/warehouse-rack-pallets.webp" width="1440" height="810" loading="lazy" decoding="async" alt="대형 랙과 팔레트에 상품을 구분해 보관하는 물류센터 현장" />
+            <figcaption>
+              <strong>팔레트·랙 보관 현장</strong>
+              <span>입고 물량과 상품 특성에 맞춰 공간을 나누어 운영합니다.</span>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
     <section class="section soft fade" id="benefits">
       <div class="wrap">
         <div class="section-head">
@@ -1561,6 +1672,27 @@
             <p>쿠팡 밀크런, 로켓그로스 등 쿠팡 판매자를 위한 물류 흐름도 상담 가능합니다.</p>
             <span class="benefit-link">쿠팡 물류대행 자세히 보기 →</span>
           </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="field-photo-section soft-photo fade" id="warehouse-photo-stock" aria-label="물류센터 재고 적재 현장">
+      <div class="wrap">
+        <div class="field-photo-grid two">
+          <figure class="field-photo">
+            <img src="/warehouse-pallet-stock.webp" width="1440" height="810" loading="lazy" decoding="async" alt="팔레트 위에 박스 상품을 구분해 적재한 물류센터 재고 공간" />
+            <figcaption>
+              <strong>박스·팔레트 재고</strong>
+              <span>상품별 재고를 구분해 입고와 출고 흐름을 관리합니다.</span>
+            </figcaption>
+          </figure>
+          <figure class="field-photo">
+            <img src="/warehouse-wide-stock.webp" width="1440" height="810" loading="lazy" decoding="async" alt="대형 랙 전체에 다양한 박스와 묶음 상품을 보관하는 물류센터 전경" />
+            <figcaption>
+              <strong>다양한 물량 보관</strong>
+              <span>박스 단위부터 묶음 재고까지 보관 조건을 상담합니다.</span>
+            </figcaption>
+          </figure>
         </div>
       </div>
     </section>
@@ -1641,6 +1773,20 @@
       </div>
     </section>
 
+    <section class="field-photo-section soft-photo fade" id="warehouse-photo-floor" aria-label="물류센터 입고 재고 현장">
+      <div class="wrap">
+        <div class="field-photo-grid">
+          <figure class="field-photo">
+            <img src="/warehouse-floor-stock.webp" width="1440" height="810" loading="lazy" decoding="async" alt="랙과 팔레트를 활용해 여러 종류의 박스 상품을 적재한 물류센터" />
+            <figcaption>
+              <strong>입고 후 재고 배치</strong>
+              <span>상품 크기와 출고 빈도에 맞춰 보관 위치를 정리합니다.</span>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
     <section class="section white fade">
       <div class="wrap">
         <div class="section-head">
@@ -1655,6 +1801,20 @@
           <article class="target-card"><div class="card-title target-title"><div class="icon">多</div><h3>다채널 운영사</h3></div><p>여러 판매 채널 주문을 한 곳에서 관리하고 싶은 업체</p></article>
           <article class="target-card"><div class="card-title target-title"><div class="icon">小</div><h3>소량 출고 업체</h3></div><p>물량은 적지만 대량 단가의 이점을 원하는 업체</p></article>
           <article class="target-card"><div class="card-title target-title"><div class="icon">大</div><h3>대형 상품 업체</h3></div><p>부피가 큰 상품의 입고와 보관 상담이 필요한 업체</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="field-photo-section fade" id="warehouse-photo-products" aria-label="물류센터 다품종 상품 보관 현장">
+      <div class="wrap">
+        <div class="field-photo-grid">
+          <figure class="field-photo">
+            <img src="/warehouse-rack-books.webp" width="1440" height="810" loading="lazy" decoding="async" alt="랙과 팔레트에 여러 종류의 박스 및 묶음 상품을 구분해 보관하는 현장" />
+            <figcaption>
+              <strong>다품종 상품 보관</strong>
+              <span>상품 종류와 수량이 달라도 구분 가능한 보관 환경을 운영합니다.</span>
+            </figcaption>
+          </figure>
         </div>
       </div>
     </section>
