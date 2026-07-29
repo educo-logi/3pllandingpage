@@ -508,6 +508,27 @@
     .floating { bottom: 0; width: 100%; border-radius: 16px 16px 0 0; }
     .floating-inner { grid-template-columns: 1fr 1fr; }
   }
+
+  .site-trust-photo { padding: 24px 0 72px; background: #fff; }
+  .site-trust-photo-inner { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
+  .site-trust-photo figure { margin: 0; overflow: hidden; border: 1px solid #e2e3eb; border-radius: 8px; background: #fff; box-shadow: 0 16px 38px rgba(22, 20, 45, 0.08); }
+  .site-trust-photo img { width: 100%; height: clamp(320px, 36vw, 480px); display: block; object-fit: cover; }
+  .site-trust-photo figcaption { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 17px 22px; border-top: 1px solid #e8e5f0; background: linear-gradient(135deg, #f2edff 0%, #edf8f2 100%); }
+  .site-trust-photo strong { color: #11142a; font-size: 18px; line-height: 1.4; font-weight: 900; white-space: nowrap; }
+  .site-trust-photo span { color: #5f6472; font-size: 14px; line-height: 1.6; font-weight: 700; text-align: right; }
+  .article .site-trust-photo { padding: 8px 0 42px; }
+  .article .site-trust-photo-inner { width: 100%; }
+  .article .site-trust-photo img { height: clamp(260px, 38vw, 390px); }
+  @media (max-width: 640px) {
+    .site-trust-photo { padding: 18px 0 56px; }
+    .site-trust-photo-inner { width: calc(100% - 32px); }
+    .site-trust-photo img, .article .site-trust-photo img { height: min(70vw, 290px); }
+    .site-trust-photo figcaption { display: block; padding: 16px 18px 18px; }
+    .site-trust-photo strong { white-space: normal; }
+    .site-trust-photo span { display: block; margin-top: 5px; text-align: left; }
+    .article .site-trust-photo { padding-bottom: 32px; }
+    .article .site-trust-photo-inner { width: 100%; }
+  }
 </style>  <script src="/analytics.js" defer></script>
 </head>
 <body>
@@ -668,6 +689,14 @@
           </a>
         </div>
       </section>
+<section class="site-trust-photo" id="site-trust-photo" aria-label="바인그룹 물류센터 운영 현장">
+  <div class="site-trust-photo-inner">
+    <figure>
+      <img src="/warehouse-rack-pallets.webp" width="1440" height="810" loading="lazy" decoding="async" alt="대형 랙과 팔레트에 상품을 구분해 보관하는 바인그룹 물류센터 현장" />
+      <figcaption><strong>팔레트·랙 보관 현장</strong><span>실제 물류센터 운영 환경을 바탕으로 상담합니다.</span></figcaption>
+    </figure>
+  </div>
+</section>
       <section class="article-cta fade">
         <h2>우리 업체의 물류 조건도 확인해보세요.</h2>
         <p>월 출고량, 상품 크기, 판매 채널과 필요한 작업을 알려주시면 적합한 운영 범위를 상담합니다.</p>
