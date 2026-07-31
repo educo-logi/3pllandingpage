@@ -18,6 +18,18 @@
     send_page_view: true,
   });
 
+  var clarityProjectId = "xuu83d3wn4";
+  window.clarity =
+    window.clarity ||
+    function () {
+      (window.clarity.q = window.clarity.q || []).push(arguments);
+    };
+  var clarityScript = document.createElement("script");
+  clarityScript.async = true;
+  clarityScript.src =
+    "https://www.clarity.ms/tag/" + encodeURIComponent(clarityProjectId);
+  document.head.appendChild(clarityScript);
+
   function sourceFromUrl(url) {
     try {
       return new URL(url, window.location.href).searchParams.get("from") || "";

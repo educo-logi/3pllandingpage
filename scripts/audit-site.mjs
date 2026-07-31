@@ -3,6 +3,7 @@ import path from "node:path";
 
 const root = process.cwd();
 const baseUrl = "https://3pl.33pl.co.kr";
+const clarityProjectId = "xuu83d3wn4";
 const errors = [];
 const pages = new Map();
 
@@ -287,6 +288,14 @@ if (!robots.includes(`Sitemap: ${baseUrl}/sitemap.xml`)) {
 }
 if (!robots.includes(`Sitemap: ${baseUrl}/image-sitemap.xml`)) {
   errors.push("robots.txt is missing the image sitemap URL");
+}
+
+const analytics = fs.readFileSync(path.join(root, "analytics.js"), "utf8");
+if (!analytics.includes(`var clarityProjectId = "${clarityProjectId}"`)) {
+  errors.push("analytics.js is missing the Microsoft Clarity project ID");
+}
+if (!analytics.includes("https://www.clarity.ms/tag/")) {
+  errors.push("analytics.js is missing the Microsoft Clarity loader");
 }
 
 const imageSitemap = fs.readFileSync(
