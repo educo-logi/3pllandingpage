@@ -421,26 +421,21 @@
       }
     }
 
-  .site-trust-photo { padding: 24px 0 72px; background: #fff; }
-  .site-trust-photo-inner { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
-  .site-trust-photo figure { margin: 0; overflow: hidden; border: 1px solid #e2e3eb; border-radius: 8px; background: #fff; box-shadow: 0 16px 38px rgba(22, 20, 45, 0.08); }
-  .site-trust-photo img { width: 100%; height: clamp(320px, 36vw, 480px); display: block; object-fit: cover; }
-  .site-trust-photo figcaption { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 17px 22px; border-top: 1px solid #e8e5f0; background: linear-gradient(135deg, #f2edff 0%, #edf8f2 100%); }
-  .site-trust-photo strong { color: #11142a; font-size: 18px; line-height: 1.4; font-weight: 900; white-space: nowrap; }
-  .site-trust-photo span { color: #5f6472; font-size: 14px; line-height: 1.6; font-weight: 700; text-align: right; }
-  .article .site-trust-photo { padding: 8px 0 42px; }
-  .article .site-trust-photo-inner { width: 100%; }
-  .article .site-trust-photo img { height: clamp(260px, 38vw, 390px); }
-  @media (max-width: 640px) {
-    .site-trust-photo { padding: 18px 0 56px; }
-    .site-trust-photo-inner { width: calc(100% - 32px); }
-    .site-trust-photo img, .article .site-trust-photo img { height: min(70vw, 290px); }
-    .site-trust-photo figcaption { display: block; padding: 16px 18px 18px; }
-    .site-trust-photo strong { white-space: normal; }
-    .site-trust-photo span { display: block; margin-top: 5px; text-align: left; }
-    .article .site-trust-photo { padding-bottom: 32px; }
-    .article .site-trust-photo-inner { width: 100%; }
-  }
+    .grid-full { grid-column: 1 / -1; }
+
+    .pallet-options { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+
+    .helper {
+      display: block;
+      margin: -1px 0 9px;
+      color: var(--sub);
+      font-size: 12px;
+      line-height: 1.55;
+    }
+
+    @media (max-width: 620px) {
+      .pallet-options { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
 </style>
   <script src="/analytics.js" defer></script>
 </head>
@@ -476,6 +471,7 @@
         <input type="hidden" id="pageUrlInput" name="pageUrl" value="" />
         <input type="hidden" id="submittedAtInput" name="submittedAt" value="" />
         <input type="hidden" id="salesChannelsInput" name="salesChannels" value="" />
+        <input type="hidden" id="storageNeedInput" name="storageNeed" value="상담 후 결정" />
 
         <section class="section">
           <h2>기본 정보</h2>
@@ -555,22 +551,14 @@
           </div>
         </section>
 
-        <section class="site-trust-photo mid-photo" id="site-trust-photo-mid-1" aria-label="바인그룹 물류센터 운영 현장">
-  <div class="site-trust-photo-inner">
-    <figure>
-      <img src="/warehouse-floor-stock.webp" width="1440" height="810" loading="lazy" decoding="async" alt="랙과 팔레트를 활용해 여러 종류의 박스 상품을 적재한 바인그룹 물류센터" />
-      <figcaption><strong>입고 재고 배치</strong><span>입고·보관·출고가 이루어지는 실제 운영 현장입니다.</span></figcaption>
-    </figure>
-  </div>
-</section>
-<section class="section">
+        <section class="section">
           <h2>필요 서비스</h2>
           <div class="grid">
             <div>
               <span class="label">보관 필요 여부</span>
               <div class="options">
-                <label class="option"><input type="radio" name="storageNeed" value="필요" /><span>필요</span></label>
-                <label class="option"><input type="radio" name="storageNeed" value="상담 후 결정" checked /><span>상담 후 결정</span></label>
+                <label class="option"><input type="radio" name="storageNeedChoice" value="필요" required /><span>필요</span></label>
+                <label class="option"><input type="radio" name="storageNeedChoice" value="상담 후 결정" checked /><span>상담 후 결정</span></label>
               </div>
             </div>
             <div>
@@ -592,6 +580,16 @@
               <div class="options">
                 <label class="option"><input type="radio" name="rocketGrowth" value="필요" /><span>필요</span></label>
                 <label class="option"><input type="radio" name="rocketGrowth" value="해당 없음" checked /><span>해당 없음</span></label>
+              </div>
+            </div>
+            <div class="grid-full" id="palletCountField" hidden>
+              <span class="label">예상 보관 규모 <b class="req">*</b></span>
+              <span class="helper">1100 × 1100 × 150mm 팔레트 기준</span>
+              <div class="options pallet-options">
+                <label class="option"><input type="radio" name="palletCountChoice" value="1~5 팔레트" /><span>1~5</span></label>
+                <label class="option"><input type="radio" name="palletCountChoice" value="6~10 팔레트" /><span>6~10</span></label>
+                <label class="option"><input type="radio" name="palletCountChoice" value="11~15 팔레트" /><span>11~15</span></label>
+                <label class="option"><input type="radio" name="palletCountChoice" value="15~20 이상 팔레트" /><span>15~20 이상</span></label>
               </div>
             </div>
           </div>
@@ -634,14 +632,6 @@
         <div class="message" id="formMessage" role="status" aria-live="polite"></div>
       </form>
 
-<section class="site-trust-photo" id="site-trust-photo" aria-label="바인그룹 물류센터 운영 현장">
-  <div class="site-trust-photo-inner">
-    <figure>
-      <img src="/warehouse-rack-books.webp" width="1440" height="810" loading="lazy" decoding="async" alt="랙과 팔레트에 여러 종류의 박스 및 묶음 상품을 구분해 보관하는 바인그룹 물류센터" />
-      <figcaption><strong>다품종 상품 보관</strong><span>실제 물류센터 운영 환경을 바탕으로 상담합니다.</span></figcaption>
-    </figure>
-  </div>
-</section>
       <p class="foot-note">전화 상담 버튼을 누르면 바로 연결됩니다. · 바인그룹 물류센터</p>
     </main>
   </div>
@@ -658,6 +648,8 @@
     var pageUrlInput = document.getElementById('pageUrlInput');
     var submittedAtInput = document.getElementById('submittedAtInput');
     var salesChannelsInput = document.getElementById('salesChannelsInput');
+    var storageNeedInput = document.getElementById('storageNeedInput');
+    var palletCountField = document.getElementById('palletCountField');
     var backLink = document.getElementById('backLink');
     var returnTargets = {
       main: './',
@@ -767,8 +759,31 @@
       return checked.length > 0;
     }
 
+    function syncStorage() {
+      var storageChoice = document.querySelector('input[name="storageNeedChoice"]:checked');
+      var palletChoices = Array.prototype.slice.call(document.querySelectorAll('input[name="palletCountChoice"]'));
+      var palletChoice = document.querySelector('input[name="palletCountChoice"]:checked');
+      var needsStorage = storageChoice && storageChoice.value === '필요';
+
+      palletCountField.hidden = !needsStorage;
+      palletChoices.forEach(function(input, index) {
+        input.required = needsStorage && index === 0;
+      });
+      storageNeedInput.value = needsStorage
+        ? '필요 / ' + (palletChoice ? palletChoice.value : '')
+        : (storageChoice ? storageChoice.value : '상담 후 결정');
+
+      return !needsStorage || Boolean(palletChoice);
+    }
+
     phoneInput.addEventListener('input', function() {
       phoneInput.value = formatPhone(phoneInput.value);
+    });
+
+    form.addEventListener('change', function(event) {
+      if (event.target.name === 'storageNeedChoice' || event.target.name === 'palletCountChoice') {
+        syncStorage();
+      }
     });
 
     form.addEventListener('submit', async function(event) {
@@ -779,6 +794,11 @@
 
       if (!syncChannels()) {
         showMessage('판매 채널을 1개 이상 선택해주세요.', 'error');
+        return;
+      }
+
+      if (!syncStorage()) {
+        showMessage('예상 보관 팔레트 수량을 선택해주세요.', 'error');
         return;
       }
 
@@ -813,6 +833,7 @@
         salesChannelsInput.value = '';
         landingPageInput.value = new URLSearchParams(window.location.search).get('from') || 'main';
         phoneInput.value = '';
+        syncStorage();
       } catch (error) {
         showMessage('접수 중 오류가 발생했습니다. 전화 상담 버튼으로 문의해주세요.', 'error');
       } finally {
@@ -822,6 +843,7 @@
     });
 
     syncMeta();
+    syncStorage();
   </script>
 </body>
 </html>
