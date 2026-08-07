@@ -471,7 +471,7 @@
     <main>
       <form id="logisticsForm">
         <input type="hidden" name="formType" value="3pl" />
-        <input type="hidden" name="source" value="3pl-sinchung.html" />
+        <input type="hidden" id="sourceInput" name="source" value="메인 3PL 랜딩페이지" />
         <input type="hidden" id="landingPageInput" name="landingPage" value="main" />
         <input type="hidden" id="pageUrlInput" name="pageUrl" value="" />
         <input type="hidden" id="submittedAtInput" name="submittedAt" value="" />
@@ -653,6 +653,7 @@
     var phoneInput = document.getElementById('phoneInput');
     var submitButton = document.getElementById('submitButton');
     var message = document.getElementById('formMessage');
+    var sourceInput = document.getElementById('sourceInput');
     var landingPageInput = document.getElementById('landingPageInput');
     var pageUrlInput = document.getElementById('pageUrlInput');
     var submittedAtInput = document.getElementById('submittedAtInput');
@@ -696,6 +697,17 @@
       'guide-self-shipping-total-cost': '/logistics-guide/self-shipping-total-cost/',
       'guide-3pl-quote-preparation': '/logistics-guide/3pl-quote-preparation/'
     };
+    var sourceNames = {
+      main: '메인 3PL 랜딩페이지',
+      '3PL1': '메인 3PL 랜딩페이지',
+      guide: '물류 가이드 목록',
+      'shoppingmall-logistics': '쇼핑몰 물류대행 랜딩페이지',
+      'coupang-logistics': '쿠팡 물류대행 랜딩페이지',
+      'inventory-return-logistics': '재고·반품 물류 랜딩페이지',
+      'small-volume-logistics': '소량 물류대행 랜딩페이지',
+      'large-cargo-logistics': '대형화물 물류대행 랜딩페이지',
+      '3pl-logistics-quote': '3PL 물류 견적 랜딩페이지'
+    };
 
     function formatPhone(value) {
       var numbers = String(value || '').replace(/\D/g, '').slice(0, 11);
@@ -712,10 +724,14 @@
     function syncMeta() {
       var params = new URLSearchParams(window.location.search);
       var from = params.get('from') || 'main';
+      var targetPath = returnTargets[from];
+      sourceInput.value = sourceNames[from] || from;
       landingPageInput.value = from;
-      pageUrlInput.value = window.location.href;
+      pageUrlInput.value = targetPath
+        ? new URL(targetPath, window.location.origin).href
+        : (document.referrer || window.location.href);
       submittedAtInput.value = new Date().toISOString();
-      backLink.href = returnTargets[from] || './';
+      backLink.href = targetPath || './';
     }
 
     function syncChannels() {
